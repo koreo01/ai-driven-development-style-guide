@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 780" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+  <rect width="900" height="780" fill="#f8fafc"/>
+  
+  <!-- タイトル -->
+  <text x="40" y="48" font-size="24" font-weight="bold" fill="#1e293b">土台と行動原則の関係</text>
+  <text x="40" y="76" font-size="14" fill="#64748b">大前提が土台、その上に行動原則①〜③が積み上がる。①が②③の基礎となる。</text>
+  
+  <!-- ============================== -->
+  <!-- ピラミッド本体（下から①→②→③） -->
+  <!-- ============================== -->
+  
+  <!-- 行動原則③（最上段） -->
+  <g transform="translate(330, 130)">
+    <polygon points="120,0 240,75 0,75" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="120" y="32" font-size="14" font-weight="bold" fill="white" text-anchor="middle">行動原則③</text>
+    <text x="120" y="54" font-size="12" fill="white" text-anchor="middle">GenAIとの協働は段階的に深化する</text>
+    <text x="120" y="69" font-size="11" fill="#ede9fe" text-anchor="middle">Phase 0〜3で深化(採否は人間)</text>
+  </g>
+  
+  <!-- 行動原則②（中段） -->
+  <g transform="translate(255, 215)">
+    <polygon points="195,0 390,85 0,85" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="195" y="35" font-size="14" font-weight="bold" fill="white" text-anchor="middle">行動原則②</text>
+    <text x="195" y="58" font-size="13" fill="white" text-anchor="middle">まずはIssueから始めよ</text>
+    <text x="195" y="75" font-size="11" fill="#d1fae5" text-anchor="middle">課題が先、解決策は後から磨く</text>
+  </g>
+  
+  <!-- 行動原則①（下段、ピラミッドの基礎部） -->
+  <g transform="translate(180, 310)">
+    <polygon points="270,0 540,95 0,95" fill="#0ea5e9" stroke="#0284c7" stroke-width="2"/>
+    <text x="270" y="36" font-size="14" font-weight="bold" fill="white" text-anchor="middle">行動原則①</text>
+    <text x="270" y="60" font-size="13" fill="white" text-anchor="middle">小さく作って、大きく繋げる</text>
+    <text x="270" y="80" font-size="11" fill="#e0f2fe" text-anchor="middle">②と③を支える共通基盤(バッチサイズを小さく保つ)</text>
+  </g>
+  
+  <!-- 大前提(土台) -->
+  <g transform="translate(80, 420)">
+    <rect width="740" height="120" rx="8" fill="#dc2626" stroke="#b91c1c" stroke-width="2.5"/>
+    <rect width="740" height="32" rx="8" fill="#b91c1c"/>
+    <rect y="22" width="740" height="10" fill="#b91c1c"/>
+    <text x="370" y="22" font-size="13" font-weight="bold" fill="white" text-anchor="middle">▼ 土台(揺るがせにできない前提)</text>
+    <text x="370" y="60" font-size="18" font-weight="bold" fill="white" text-anchor="middle">大前提:常に健康な状態を保ち続けるソフトウェアであれ</text>
+    <text x="370" y="85" font-size="12" fill="#fecaca" text-anchor="middle">疎結合なアーキテクチャ・テスト自動化・ログ/ヘルスチェック自動化</text>
+    <text x="370" y="105" font-size="12" fill="#fecaca" text-anchor="middle">これらがない状態で何をしても、アジリティは失われる</text>
+  </g>
+  
+  <!-- ============================== -->
+  <!-- 左側:各層の役割ラベル -->
+  <!-- ============================== -->
+  
+  <!-- ③のラベル -->
+  <path d="M 330 168 L 290 168" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="285" y="164" font-size="11" fill="#5b21b6" text-anchor="end" font-style="italic">Phase別の自律度で</text>
+  <text x="285" y="178" font-size="11" fill="#5b21b6" text-anchor="end" font-style="italic">リズムを加速する</text>
+  
+  <!-- ②のラベル -->
+  <path d="M 255 258 L 215 258" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="210" y="254" font-size="11" fill="#065f46" text-anchor="end" font-style="italic">何をリズムに</text>
+  <text x="210" y="268" font-size="11" fill="#065f46" text-anchor="end" font-style="italic">乗せるか決める</text>
+  
+  <!-- ①のラベル -->
+  <path d="M 180 358 L 140 358" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="135" y="354" font-size="11" fill="#0c4a6e" text-anchor="end" font-style="italic">作り方の</text>
+  <text x="135" y="368" font-size="11" fill="#0c4a6e" text-anchor="end" font-style="italic">リズムを作る</text>
+  
+  <!-- 土台のラベル(土台ブロックの上方に配置して見切れを回避) -->
+  <path d="M 130 420 L 130 405" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="130" y="398" font-size="11" fill="#991b1b" text-anchor="middle" font-style="italic">すべてが乗る基盤</text>
+  
+  <!-- ============================== -->
+  <!-- 下部メッセージ -->
+  <!-- ============================== -->
+  <g transform="translate(40, 570)">
+    <rect width="820" height="180" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+    <text x="20" y="28" font-size="14" font-weight="bold" fill="#1e293b">💡 この図の読み方</text>
+    
+    <text x="20" y="56" font-size="12" fill="#334155">・一番下の<tspan font-weight="bold" fill="#991b1b">大前提</tspan>が崩れていれば、その上の行動原則は何をしても長続きしません。</text>
+    <text x="32" y="74" font-size="12" fill="#334155">土台が整って初めて、上の原則が機能します。</text>
+    
+    <text x="20" y="100" font-size="12" fill="#334155">・<tspan font-weight="bold" fill="#0c4a6e">①小さく作って、大きく繋げる</tspan>がピラミッドの基礎部にあるのは、②と③の両方を支える共通基盤だからです。</text>
+    <text x="32" y="118" font-size="12" fill="#334155">バッチサイズが小さくなければ、課題から始める意義も、Phaseに応じた自律度のAIで加速する効果も薄れます。</text>
+    
+    <text x="20" y="144" font-size="12" fill="#334155">・<tspan font-weight="bold" fill="#065f46">②</tspan>がその上にあるのは「何をリズムに乗せるか」を決める層、</text>
+    <text x="32" y="162" font-size="12" fill="#334155"><tspan font-weight="bold" fill="#5b21b6">③</tspan>が頂点にあるのは「リズムをPhaseに応じた自律度のAIで加速する」派生的な層だからです。</text>
+  </g>
+</svg>

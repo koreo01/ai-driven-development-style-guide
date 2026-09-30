@@ -1,0 +1,61 @@
+<svg width="100%" viewBox="0 0 680 540" role="img" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+<title>Local開発フロー全体像（Level 1）</title>
+<desc>セッション開始を起点に実装サイクルを回し、セッション終了で完了処理を行う1セッションの流れ。各フェーズ名を主に対応コマンドを副題に併記。背景に文脈供給層を示す。</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+<style>
+svg { color: #3d3d3a; }
+@media (prefers-color-scheme: dark){ svg { color: #c9c7be; } }
+.th { font-size:14px; font-weight:500; }
+.ts { font-size:12px; font-weight:400; opacity:0.85; }
+.arr { stroke: currentColor; stroke-width:1.5; fill:none; }
+.box-gray { fill:#f1efe8; stroke:#888780; }
+.box-teal { fill:#e1f5ee; stroke:#0f6e56; }
+.box-amber{ fill:#faeeda; stroke:#ba7517; }
+.box-red  { fill:#fcebeb; stroke:#a32d2d; }
+.box-blue { fill:#e6f1fb; stroke:#185fa5; }
+.tx-gray { fill:#2c2c2a; } .tx-teal { fill:#04342c; } .tx-amber{ fill:#412402; }
+.tx-red { fill:#501313; } .tx-blue { fill:#042c53; }
+.sub-gray{ fill:#5f5e5a; } .sub-teal{ fill:#0f6e56; } .sub-amber{ fill:#854f0b; }
+.sub-red{ fill:#791f1f; } .sub-blue{ fill:#0c447c; }
+@media (prefers-color-scheme: dark){
+.box-gray{fill:#2c2c2a;stroke:#b4b2a9;} .box-teal{fill:#04342c;stroke:#5dcaa5;}
+.box-amber{fill:#412402;stroke:#ef9f27;} .box-red{fill:#501313;stroke:#f09595;}
+.box-blue{fill:#042c53;stroke:#85b7eb;}
+.tx-gray,.tx-teal,.tx-amber,.tx-red,.tx-blue{fill:#f1efe8;}
+.sub-gray{fill:#d3d1c7;} .sub-teal{fill:#9fe1cb;} .sub-amber{fill:#fac775;}
+.sub-red{fill:#f7c1c1;} .sub-blue{fill:#b5d4f4;}
+}
+</style>
+</defs>
+
+<rect x="40" y="40" width="600" height="52" rx="8" stroke-width="0.5" class="box-gray" stroke-dasharray="4 3"/>
+<text class="th tx-gray" x="52" y="62">背景として全工程で常時参照（Level 3 で育てる対象）</text>
+<text class="ts sub-gray" x="52" y="80">CLAUDE.md ・ .claude/rules ・ status/current.md ・ 既存ソースコード</text>
+
+<rect x="40" y="112" width="600" height="56" rx="8" stroke-width="0.5" class="box-teal"/>
+<text class="th tx-teal" x="340" y="132" text-anchor="middle" dominant-baseline="central">① セッション開始 — 取得＋開始判定</text>
+<text class="ts sub-teal" x="340" y="152" text-anchor="middle" dominant-baseline="central">/dev:start-session ： current.md 読込 → 条件①② 判定 → 正常スタート（分岐は判定チャート参照）</text>
+<line x1="340" y1="168" x2="340" y2="196" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="120" y="196" width="440" height="44" rx="8" stroke-width="0.5" class="box-amber"/>
+<text class="th tx-amber" x="340" y="218" text-anchor="middle" dominant-baseline="central">② ブランチ作成 / 継続</text>
+<line x1="340" y1="240" x2="340" y2="268" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="60" y="268" width="560" height="96" rx="12" fill="none" stroke="#0f6e56" stroke-width="0.5" stroke-dasharray="5 4"/>
+<text class="ts sub-teal" x="72" y="286">SubTask 単位の実装サイクル（Level 1 = TDD の刻み）</text>
+<rect x="120" y="298" width="440" height="52" rx="8" stroke-width="0.5" class="box-teal"/>
+<text class="th tx-teal" x="340" y="316" text-anchor="middle" dominant-baseline="central">③ 実装サイクル Ⓐ意図→Ⓑ生成→Ⓒ検証→Ⓓ DoD＆AC→Ⓔレビュー</text>
+<text class="ts sub-teal" x="340" y="336" text-anchor="middle" dominant-baseline="central">修正はⒷに戻る（Red-Green-Refactor を1サブタスク内で反復）</text>
+<line x1="340" y1="364" x2="340" y2="392" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="120" y="392" width="440" height="44" rx="8" stroke-width="0.5" class="box-red"/>
+<text class="th tx-red" x="340" y="414" text-anchor="middle" dominant-baseline="central">④ コミット（承認必須ゲート）</text>
+<line x1="340" y1="436" x2="340" y2="464" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="40" y="464" width="600" height="56" rx="8" stroke-width="0.5" class="box-blue"/>
+<text class="th tx-blue" x="340" y="484" text-anchor="middle" dominant-baseline="central">⑤ セッション終了 — 完了チェックリスト一括実行 → /compact 案内</text>
+<text class="ts sub-blue" x="340" y="504" text-anchor="middle" dominant-baseline="central">/dev:end-session ： push → CI → PR/マージ（最終SubTask時）→ Notion → サマリー → status 更新</text>
+</svg>

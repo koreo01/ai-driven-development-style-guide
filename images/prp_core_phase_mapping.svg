@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 620" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+  <rect width="1300" height="620" fill="#f8fafc"/>
+
+  <!-- タイトル -->
+  <text x="40" y="48" font-size="24" font-weight="bold" fill="#1e293b">prp-core コマンド × Phase 0〜3 マッピング</text>
+  <text x="40" y="76" font-size="14" fill="#64748b">Phase が上がるほど AI に委ねる prp-core コマンドの範囲が広がる。下位 Phase のコマンドは上位 Phase でも引き続き使う(累積)。</text>
+
+  <!-- 上部:Phase進行の矢印帯 -->
+  <g transform="translate(60, 100)">
+    <rect width="1180" height="40" rx="20" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="20" y="26" font-size="12" font-weight="bold" fill="#3730a3">▶ コマンドの中心は「調査」→「計画・補助」→「実装・検証」→「自律ループ」へ深化する</text>
+    <text x="820" y="26" font-size="11" fill="#3730a3" font-style="italic">採否は全 Phase・全コマンドで人間に残る</text>
+  </g>
+
+  <!-- ============================== -->
+  <!-- Phase 0: 接触 -->
+  <!-- ============================== -->
+  <g transform="translate(60, 160)">
+    <rect width="290" height="350" rx="10" fill="white" stroke="#94a3b8" stroke-width="2"/>
+    <rect width="290" height="50" rx="10" fill="#64748b"/>
+    <rect y="40" width="290" height="12" fill="#64748b"/>
+    <text x="145" y="22" font-size="12" font-weight="bold" fill="#cbd5e1" text-anchor="middle">Phase 0</text>
+    <text x="145" y="42" font-size="18" font-weight="bold" fill="white" text-anchor="middle">接触</text>
+
+    <!-- AIへの委ね方 -->
+    <text x="20" y="80" font-size="11" font-weight="bold" fill="#475569">🤖 AIへの委ね方</text>
+    <rect x="20" y="88" width="250" height="42" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="145" y="106" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">READ-only で試す</text>
+    <text x="145" y="122" font-size="10" fill="#475569" text-anchor="middle">変更を伴わないコマンドだけ</text>
+
+    <!-- 使うコマンド -->
+    <text x="20" y="155" font-size="11" font-weight="bold" fill="#475569">📦 使う prp-core コマンド</text>
+
+    <g transform="translate(20, 168)">
+      <rect width="250" height="46" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>
+      <text x="10" y="18" font-size="12" font-weight="bold" fill="#0f172a">/prp-codebase-question</text>
+      <text x="10" y="34" font-size="10" fill="#475569">並列調査で現状を可視化</text>
+    </g>
+
+    <!-- 補足 -->
+    <text x="20" y="240" font-size="11" font-weight="bold" fill="#475569">📝 補足</text>
+    <text x="20" y="258" font-size="10" fill="#475569">・出力を読み・試し・感覚を掴む</text>
+    <text x="20" y="274" font-size="10" fill="#475569">・コード変更は人間が手で行う</text>
+    <text x="20" y="290" font-size="10" fill="#475569">・チャット応答で性質を学ぶ</text>
+  </g>
+
+  <!-- ============================== -->
+  <!-- Phase 1: ナビゲーター -->
+  <!-- ============================== -->
+  <g transform="translate(380, 160)">
+    <rect width="290" height="350" rx="10" fill="white" stroke="#0ea5e9" stroke-width="2"/>
+    <rect width="290" height="50" rx="10" fill="#0ea5e9"/>
+    <rect y="40" width="290" height="12" fill="#0ea5e9"/>
+    <text x="145" y="22" font-size="12" font-weight="bold" fill="#e0f2fe" text-anchor="middle">Phase 1</text>
+    <text x="145" y="42" font-size="18" font-weight="bold" fill="white" text-anchor="middle">ナビゲーター</text>
+
+    <text x="20" y="80" font-size="11" font-weight="bold" fill="#475569">🤖 AIへの委ね方</text>
+    <rect x="20" y="88" width="250" height="42" rx="4" fill="#e0f2fe" stroke="#0ea5e9"/>
+    <text x="145" y="106" font-size="12" font-weight="bold" fill="#0c4a6e" text-anchor="middle">調査・計画・定型作業の補助</text>
+    <text x="145" y="122" font-size="10" fill="#0c4a6e" text-anchor="middle">採否・実装は全て人間がレビュー</text>
+
+    <text x="20" y="155" font-size="11" font-weight="bold" fill="#475569">📦 追加で使う prp-core コマンド</text>
+
+    <g transform="translate(20, 168)">
+      <rect width="250" height="26" rx="4" fill="#e0f2fe" stroke="#0ea5e9"/>
+      <text x="10" y="13" font-size="11" font-weight="bold" fill="#0c4a6e">/prp-debug</text>
+      <text x="10" y="22" font-size="9" fill="#0c4a6e">根本原因分析を AI に並走させる</text>
+    </g>
+    <g transform="translate(20, 198)">
+      <rect width="250" height="26" rx="4" fill="#e0f2fe" stroke="#0ea5e9"/>
+      <text x="10" y="13" font-size="11" font-weight="bold" fill="#0c4a6e">/prp-plan</text>
+      <text x="10" y="22" font-size="9" fill="#0c4a6e">実装計画ドラフトを生成(確定は人間)</text>
+    </g>
+    <g transform="translate(20, 228)">
+      <rect width="250" height="26" rx="4" fill="#e0f2fe" stroke="#0ea5e9"/>
+      <text x="10" y="13" font-size="11" font-weight="bold" fill="#0c4a6e">/prp-prd</text>
+      <text x="10" y="22" font-size="9" fill="#0c4a6e">PRD 草案を対話で起こす(仕様は人間)</text>
+    </g>
+    <g transform="translate(20, 258)">
+      <rect width="250" height="26" rx="4" fill="#e0f2fe" stroke="#0ea5e9"/>
+      <text x="10" y="13" font-size="11" font-weight="bold" fill="#0c4a6e">/prp-issue-investigate</text>
+      <text x="10" y="22" font-size="9" fill="#0c4a6e">Issue を調査・分析(変更なし)</text>
+    </g>
+    <g transform="translate(20, 288)">
+      <rect width="250" height="26" rx="4" fill="#e0f2fe" stroke="#0ea5e9"/>
+      <text x="10" y="13" font-size="11" font-weight="bold" fill="#0c4a6e">/prp-commit</text>
+      <text x="10" y="22" font-size="9" fill="#0c4a6e">差分を読み取って粒度別コミット</text>
+    </g>
+    <g transform="translate(20, 318)">
+      <rect width="250" height="26" rx="4" fill="#e0f2fe" stroke="#0ea5e9"/>
+      <text x="10" y="13" font-size="11" font-weight="bold" fill="#0c4a6e">/prp-pr</text>
+      <text x="10" y="22" font-size="9" fill="#0c4a6e">未 push 分を集めて PR 作成</text>
+    </g>
+  </g>
+
+  <!-- ============================== -->
+  <!-- Phase 2: バディ -->
+  <!-- ============================== -->
+  <g transform="translate(670, 160)">
+    <rect width="290" height="350" rx="10" fill="white" stroke="#10b981" stroke-width="2"/>
+    <rect width="290" height="50" rx="10" fill="#10b981"/>
+    <rect y="40" width="290" height="12" fill="#10b981"/>
+    <text x="145" y="22" font-size="12" font-weight="bold" fill="#d1fae5" text-anchor="middle">Phase 2</text>
+    <text x="145" y="42" font-size="18" font-weight="bold" fill="white" text-anchor="middle">バディ</text>
+
+    <text x="20" y="80" font-size="11" font-weight="bold" fill="#475569">🤖 AIへの委ね方</text>
+    <rect x="20" y="88" width="250" height="42" rx="4" fill="#d1fae5" stroke="#10b981"/>
+    <text x="145" y="106" font-size="12" font-weight="bold" fill="#065f46" text-anchor="middle">実装・検証ループを委ねる</text>
+    <text x="145" y="122" font-size="10" fill="#065f46" text-anchor="middle">SubTask 単位で AI が完結させる</text>
+
+    <text x="20" y="155" font-size="11" font-weight="bold" fill="#475569">📦 追加で使う prp-core コマンド</text>
+
+    <g transform="translate(20, 168)">
+      <rect width="250" height="40" rx="4" fill="#d1fae5" stroke="#10b981"/>
+      <text x="10" y="16" font-size="12" font-weight="bold" fill="#065f46">/prp-implement</text>
+      <text x="10" y="32" font-size="10" fill="#065f46">計画→実装→検証ループまで実行</text>
+    </g>
+    <g transform="translate(20, 212)">
+      <rect width="250" height="40" rx="4" fill="#d1fae5" stroke="#10b981"/>
+      <text x="10" y="16" font-size="12" font-weight="bold" fill="#065f46">/prp-issue-fix</text>
+      <text x="10" y="32" font-size="10" fill="#065f46">調査成果物から修正実装 + PR 化</text>
+    </g>
+    <g transform="translate(20, 256)">
+      <rect width="250" height="40" rx="4" fill="#d1fae5" stroke="#10b981"/>
+      <text x="10" y="16" font-size="12" font-weight="bold" fill="#065f46">/prp-review</text>
+      <text x="10" y="32" font-size="10" fill="#065f46">PR 全体の一次レビューを並走</text>
+    </g>
+    <g transform="translate(20, 300)">
+      <rect width="250" height="40" rx="4" fill="#d1fae5" stroke="#10b981"/>
+      <text x="10" y="16" font-size="12" font-weight="bold" fill="#065f46">/prp-review-agents</text>
+      <text x="10" y="32" font-size="10" fill="#065f46">専門 Subagent を並列レビュー投入</text>
+    </g>
+  </g>
+
+  <!-- ============================== -->
+  <!-- Phase 3: 自律 -->
+  <!-- ============================== -->
+  <g transform="translate(960, 160)">
+    <rect width="290" height="350" rx="10" fill="white" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="290" height="50" rx="10" fill="#8b5cf6"/>
+    <rect y="40" width="290" height="12" fill="#8b5cf6"/>
+    <text x="145" y="22" font-size="12" font-weight="bold" fill="#ede9fe" text-anchor="middle">Phase 3</text>
+    <text x="145" y="42" font-size="18" font-weight="bold" fill="white" text-anchor="middle">自律</text>
+
+    <text x="20" y="80" font-size="11" font-weight="bold" fill="#475569">🤖 AIへの委ね方</text>
+    <rect x="20" y="88" width="250" height="42" rx="4" fill="#ede9fe" stroke="#8b5cf6"/>
+    <text x="145" y="106" font-size="12" font-weight="bold" fill="#5b21b6" text-anchor="middle">自律ループの運用</text>
+    <text x="145" y="122" font-size="10" fill="#5b21b6" text-anchor="middle">ゴール提示・採否・停止判断は人間</text>
+
+    <text x="20" y="155" font-size="11" font-weight="bold" fill="#475569">📦 追加で使う prp-core コマンド</text>
+
+    <g transform="translate(20, 168)">
+      <rect width="250" height="60" rx="4" fill="#ede9fe" stroke="#8b5cf6"/>
+      <text x="10" y="18" font-size="12" font-weight="bold" fill="#5b21b6">/prp-ralph</text>
+      <text x="10" y="36" font-size="10" fill="#5b21b6">検証が全通するまで</text>
+      <text x="10" y="50" font-size="10" fill="#5b21b6">PRP plan を自律実行</text>
+    </g>
+    <g transform="translate(20, 236)">
+      <rect width="250" height="60" rx="4" fill="#ede9fe" stroke="#8b5cf6"/>
+      <text x="10" y="18" font-size="12" font-weight="bold" fill="#5b21b6">/prp-ralph-cancel</text>
+      <text x="10" y="36" font-size="10" fill="#5b21b6">アクティブな自律ループを停止</text>
+      <text x="10" y="50" font-size="10" fill="#5b21b6">(監督側の介入点)</text>
+    </g>
+
+    <text x="20" y="320" font-size="10" fill="#5b21b6" font-style="italic">※ 自律ループでも Phase 0〜2 の</text>
+    <text x="20" y="334" font-size="10" fill="#5b21b6" font-style="italic">  コマンドは内部で呼び出される</text>
+  </g>
+
+  <!-- ============================== -->
+  <!-- 下部:採否ゲートの再確認 -->
+  <!-- ============================== -->
+  <g transform="translate(60, 530)">
+    <rect width="1180" height="60" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+    <text x="20" y="24" font-size="13" font-weight="bold" fill="#991b1b">🚦 採否(Yes/No)の最終ゲートはどの Phase・どのコマンドでも人間が握る</text>
+    <text x="20" y="44" font-size="11" fill="#7f1d1d">Phase が上がってもコマンドが自律化しても、この境界は移動しない。「コマンドに丸投げ」と「コマンドに委任」を分けるのは、採否責務の所在。</text>
+  </g>
+</svg>

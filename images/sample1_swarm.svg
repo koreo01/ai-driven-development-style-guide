@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+  <rect width="1200" height="780" fill="#f8fafc"/>
+  
+  <!-- タイトル -->
+  <text x="40" y="48" font-size="25" font-weight="bold" fill="#1e293b">チーム・スウォーム × Claudeガードレール</text>
+  <text x="40" y="78" font-size="15" fill="#64748b">チーム全員が1つのPBIに群がり、共通のAIガードレールが全員を同じ基準で支える</text>
+  
+  <!-- 上部: 今スプリントで扱う唯一のPBI -->
+  <g transform="translate(420, 110)">
+    <rect width="360" height="80" rx="10" fill="#1e40af"/>
+    <text x="180" y="30" font-size="13" font-weight="bold" fill="#bfdbfe" text-anchor="middle">WIP = 1（チームで扱うPBIは常に1つ）</text>
+    <text x="180" y="56" font-size="18" font-weight="bold" fill="white" text-anchor="middle">🎯 PBI: ユーザーログイン機能</text>
+    <text x="180" y="72" font-size="11" fill="#bfdbfe" text-anchor="middle">バーティカルスライスで価値を届ける単位</text>
+  </g>
+  
+  <!-- PBIから下への分岐矢印 -->
+  <path d="M 600 195 L 600 215" stroke="#1e40af" stroke-width="3" fill="none"/>
+  <text x="600" y="232" font-size="12" fill="#64748b" text-anchor="middle">▼ 垂直スライスに分解（S0→S1→S2）</text>
+  
+  <!-- Claudeガードレール層（上から全体を覆う） -->
+  <rect x="60" y="250" width="1080" height="85" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="80" y="275" font-size="14" font-weight="bold" fill="#3730a3">🛡 Claudeガードレール層（チーム全員 × 全スライスに共通で効く）</text>
+  
+  <g transform="translate(90, 290)">
+    <rect width="140" height="36" rx="6" fill="#ec4899"/>
+    <text x="70" y="17" font-size="11" font-weight="bold" fill="white" text-anchor="middle">CLAUDE.md</text>
+    <text x="70" y="30" font-size="9" fill="#fce7f3" text-anchor="middle">規約・チケット体系</text>
+  </g>
+  <g transform="translate(245, 290)">
+    <rect width="140" height="36" rx="6" fill="#14b8a6"/>
+    <text x="70" y="17" font-size="11" font-weight="bold" fill="white" text-anchor="middle">MCP Server</text>
+    <text x="70" y="30" font-size="9" fill="#ccfbf1" text-anchor="middle">Notion/Jira連携</text>
+  </g>
+  <g transform="translate(400, 290)">
+    <rect width="160" height="36" rx="6" fill="#0ea5e9"/>
+    <text x="80" y="17" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Slash Command</text>
+    <text x="80" y="30" font-size="9" fill="#e0f2fe" text-anchor="middle">/s0-skeleton /pull-task</text>
+  </g>
+  <g transform="translate(575, 290)">
+    <rect width="160" height="36" rx="6" fill="#10b981"/>
+    <text x="80" y="17" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Subagent</text>
+    <text x="80" y="30" font-size="9" fill="#d1fae5" text-anchor="middle">tdd-pair / e2e-grower</text>
+  </g>
+  <g transform="translate(750, 290)">
+    <rect width="160" height="36" rx="6" fill="#f59e0b"/>
+    <text x="80" y="17" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Claude Hooks</text>
+    <text x="80" y="30" font-size="9" fill="#fef3c7" text-anchor="middle">サブタスクサイズ超過検知</text>
+  </g>
+  <g transform="translate(925, 290)">
+    <rect width="185" height="36" rx="6" fill="#8b5cf6"/>
+    <text x="92" y="17" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Git pre-commit Hook</text>
+    <text x="92" y="30" font-size="9" fill="#ede9fe" text-anchor="middle">lint/format/DoDチェック</text>
+  </g>
+  
+  <!-- ガードレール層から下向き矢印 -->
+  <path d="M 260 340 L 260 360" stroke="#6366f1" stroke-width="2.5" fill="none" stroke-dasharray="5,3" marker-end="url(#arr-i)"/>
+  <path d="M 600 340 L 600 360" stroke="#6366f1" stroke-width="2.5" fill="none" stroke-dasharray="5,3" marker-end="url(#arr-i)"/>
+  <path d="M 940 340 L 940 360" stroke="#6366f1" stroke-width="2.5" fill="none" stroke-dasharray="5,3" marker-end="url(#arr-i)"/>
+  
+  <!-- スウォーム領域 -->
+  <rect x="60" y="370" width="1080" height="320" rx="12" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="80" y="395" font-size="14" font-weight="bold" fill="#475569">👥 チーム・スウォーム（1つのPBIに全員が群がる）</text>
+  
+  <!-- 垂直スライスを示す縦のバンド -->
+  <rect x="85" y="410" width="330" height="265" rx="8" fill="#dbeafe" opacity="0.4"/>
+  <text x="250" y="432" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">S0: スケルトン</text>
+  <text x="250" y="450" font-size="11" fill="#1e3a8a" text-anchor="middle">（CIが通る土台）</text>
+  
+  <rect x="435" y="410" width="330" height="265" rx="8" fill="#d1fae5" opacity="0.4"/>
+  <text x="600" y="432" font-size="14" font-weight="bold" fill="#065f46" text-anchor="middle">S1: ハッピーパス</text>
+  <text x="600" y="450" font-size="11" fill="#064e3b" text-anchor="middle">（UI〜DB疎通）</text>
+  
+  <rect x="785" y="410" width="330" height="265" rx="8" fill="#fef3c7" opacity="0.4"/>
+  <text x="950" y="432" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">S2: バリエーション</text>
+  <text x="950" y="450" font-size="11" fill="#78350f" text-anchor="middle">（入力パラメータバリエーション）</text>
+  
+  <!-- スライス間の時系列矢印 -->
+  <path d="M 415 540 L 435 540" stroke="#475569" stroke-width="2" marker-end="url(#arr-s)"/>
+  <path d="M 765 540 L 785 540" stroke="#475569" stroke-width="2" marker-end="url(#arr-s)"/>
+  
+  <!-- S0の中のメンバー群（全員が群がる） -->
+  <g transform="translate(130, 475)">
+    <circle r="17" fill="#3b82f6"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#1e3a8a" text-anchor="middle">A</text>
+  </g>
+  <g transform="translate(190, 475)">
+    <circle r="17" fill="#3b82f6"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#1e3a8a" text-anchor="middle">B</text>
+  </g>
+  <g transform="translate(250, 475)">
+    <circle r="17" fill="#3b82f6"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#1e3a8a" text-anchor="middle">C</text>
+  </g>
+  <g transform="translate(310, 475)">
+    <circle r="17" fill="#3b82f6"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#1e3a8a" text-anchor="middle">D</text>
+  </g>
+  
+  <!-- S0のアーチファクト（2トラック） -->
+  <rect x="100" y="530" width="140" height="45" rx="4" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="170" y="548" font-size="10" font-weight="bold" fill="#1e3a8a" text-anchor="middle">トラックA</text>
+  <text x="170" y="565" font-size="9" fill="#1e3a8a" text-anchor="middle">空のクラス・fail UT</text>
+  
+  <rect x="260" y="530" width="140" height="45" rx="4" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="330" y="548" font-size="10" font-weight="bold" fill="#1e3a8a" text-anchor="middle">トラックB</text>
+  <text x="330" y="565" font-size="9" fill="#1e3a8a" text-anchor="middle">Gherkin→pending(L1)</text>
+  
+  <!-- S0の吹き出し -->
+  <rect x="100" y="590" width="300" height="70" rx="6" fill="#fef9c3" stroke="#eab308" stroke-width="1.5"/>
+  <text x="250" y="610" font-size="11" font-weight="bold" fill="#713f12" text-anchor="middle">AIの効きどころ</text>
+  <text x="250" y="628" font-size="10" fill="#713f12" text-anchor="middle">・/s0-skeleton で骨格を一括生成</text>
+  <text x="250" y="644" font-size="10" fill="#713f12" text-anchor="middle">・Gherkin→System Spec雛形を自動転写</text>
+  
+  <!-- S1のメンバー群 -->
+  <g transform="translate(480, 475)">
+    <circle r="17" fill="#10b981"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#064e3b" text-anchor="middle">A</text>
+  </g>
+  <g transform="translate(540, 475)">
+    <circle r="17" fill="#10b981"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#064e3b" text-anchor="middle">B</text>
+  </g>
+  <g transform="translate(600, 475)">
+    <circle r="17" fill="#10b981"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#064e3b" text-anchor="middle">C</text>
+  </g>
+  <g transform="translate(660, 475)">
+    <circle r="17" fill="#10b981"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#064e3b" text-anchor="middle">D</text>
+  </g>
+  
+  <rect x="450" y="530" width="140" height="45" rx="4" fill="white" stroke="#10b981" stroke-width="1.5"/>
+  <text x="520" y="548" font-size="10" font-weight="bold" fill="#064e3b" text-anchor="middle">トラックA</text>
+  <text x="520" y="565" font-size="9" fill="#064e3b" text-anchor="middle">Red→Green→Refactor</text>
+  
+  <rect x="610" y="530" width="140" height="45" rx="4" fill="white" stroke="#10b981" stroke-width="1.5"/>
+  <text x="680" y="548" font-size="10" font-weight="bold" fill="#064e3b" text-anchor="middle">トラックB</text>
+  <text x="680" y="565" font-size="9" fill="#064e3b" text-anchor="middle">E2E 1本Green(L3)</text>
+  
+  <rect x="450" y="590" width="300" height="70" rx="6" fill="#fef9c3" stroke="#eab308" stroke-width="1.5"/>
+  <text x="600" y="610" font-size="11" font-weight="bold" fill="#713f12" text-anchor="middle">AIの効きどころ</text>
+  <text x="600" y="628" font-size="10" fill="#713f12" text-anchor="middle">・tdd-pair Subagentが失敗テストを提案</text>
+  <text x="600" y="644" font-size="10" fill="#713f12" text-anchor="middle">・e2e-grower がSelector/Fixtureを補完</text>
+  
+  <!-- S2のメンバー群 -->
+  <g transform="translate(830, 475)">
+    <circle r="17" fill="#f59e0b"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#78350f" text-anchor="middle">A</text>
+  </g>
+  <g transform="translate(890, 475)">
+    <circle r="17" fill="#f59e0b"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#78350f" text-anchor="middle">B</text>
+  </g>
+  <g transform="translate(950, 475)">
+    <circle r="17" fill="#f59e0b"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#78350f" text-anchor="middle">C</text>
+  </g>
+  <g transform="translate(1010, 475)">
+    <circle r="17" fill="#f59e0b"/>
+    <circle cx="0" cy="-6" r="6" fill="white"/>
+    <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+    <text y="32" font-size="10" fill="#78350f" text-anchor="middle">D</text>
+  </g>
+  
+  <rect x="800" y="530" width="140" height="45" rx="4" fill="white" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="870" y="548" font-size="10" font-weight="bold" fill="#78350f" text-anchor="middle">トラックA</text>
+  <text x="870" y="565" font-size="9" fill="#78350f" text-anchor="middle">入力バリエーションUT Green</text>
+
+  <rect x="960" y="530" width="140" height="45" rx="4" fill="white" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="1030" y="548" font-size="10" font-weight="bold" fill="#78350f" text-anchor="middle">トラックB</text>
+  <text x="1030" y="565" font-size="9" fill="#78350f" text-anchor="middle">入力バリエーションE2E追加(L4)</text>
+  
+  <rect x="800" y="590" width="300" height="70" rx="6" fill="#fef9c3" stroke="#eab308" stroke-width="1.5"/>
+  <text x="950" y="610" font-size="11" font-weight="bold" fill="#713f12" text-anchor="middle">AIの効きどころ</text>
+  <text x="950" y="628" font-size="10" fill="#713f12" text-anchor="middle">・大文字小文字混在・Remember-me 有無などをAIが列挙</text>
+  <text x="950" y="644" font-size="10" fill="#713f12" text-anchor="middle">・境界値ケースをAIが列挙</text>
+  
+  <!-- 下部まとめ -->
+  <rect x="40" y="710" width="1120" height="55" rx="6" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="600" y="735" font-size="15" font-weight="bold" fill="#3730a3" text-anchor="middle">WIP=1 × 全員スウォーム × 2トラック並走 を、Claudeガードレールが全域で支える</text>
+  <text x="600" y="755" font-size="12" fill="#475569" text-anchor="middle">人間は「価値を届ける判断」、AIは「規約・テスト・知識供給」を分担</text>
+  
+  <defs>
+    <marker id="arr-i" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1"/>
+    </marker>
+    <marker id="arr-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+</svg>

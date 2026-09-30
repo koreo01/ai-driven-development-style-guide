@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+  <rect width="1200" height="850" fill="#f8fafc"/>
+  
+  <!-- タイトル -->
+  <text x="40" y="48" font-size="24" font-weight="bold" fill="#1e293b">AIガードレールのライフサイクル</text>
+  <text x="40" y="76" font-size="14" fill="#64748b">発見から廃棄まで7段階。運用とアップデートは循環し、ガードレールを継続的に育てる。</text>
+  
+  <!-- ============================== -->
+  <!-- 中央の循環構造 -->
+  <!-- ============================== -->
+  
+  <!-- 大きな円（運用とアップデートの循環エリアを示す） -->
+  <circle cx="600" cy="490" r="240" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="600" y="270" font-size="12" fill="#94a3b8" text-anchor="middle" font-style="italic">運用 ⇄ アップデートの循環領域</text>
+  
+  <!-- ============================== -->
+  <!-- 7段階のステップ配置 -->
+  <!-- ============================== -->
+  
+  <!-- ステップ1: 発見（左上、入り口） -->
+  <g transform="translate(80, 200)">
+    <circle cx="60" cy="60" r="55" fill="#fbbf24" stroke="#b45309" stroke-width="2.5"/>
+    <text x="60" y="50" font-size="13" font-weight="bold" fill="#78350f" text-anchor="middle">①</text>
+    <text x="60" y="68" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">発見</text>
+    <text x="60" y="84" font-size="10" fill="#92400e" text-anchor="middle">Discover</text>
+  </g>
+  <text x="140" y="190" font-size="10" fill="#78350f" text-anchor="middle">パターンへの気づき</text>
+  <text x="140" y="335" font-size="10" fill="#78350f" text-anchor="middle">繰り返し起きる違反</text>
+  
+  <!-- ステップ2: 設計 -->
+  <g transform="translate(280, 130)">
+    <circle cx="60" cy="60" r="55" fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+    <text x="60" y="50" font-size="13" font-weight="bold" fill="white" text-anchor="middle">②</text>
+    <text x="60" y="68" font-size="14" font-weight="bold" fill="white" text-anchor="middle">設計</text>
+    <text x="60" y="84" font-size="10" fill="#e0f2fe" text-anchor="middle">Design</text>
+  </g>
+  <text x="340" y="120" font-size="10" fill="#0c4a6e" text-anchor="middle">どの種別で対処するか</text>
+  <text x="340" y="265" font-size="10" fill="#0c4a6e" text-anchor="middle">CLAUDE.md? Subagent?</text>
+  
+  <!-- ステップ3: 実装 -->
+  <g transform="translate(490, 110)">
+    <circle cx="60" cy="60" r="55" fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+    <text x="60" y="50" font-size="13" font-weight="bold" fill="white" text-anchor="middle">③</text>
+    <text x="60" y="68" font-size="14" font-weight="bold" fill="white" text-anchor="middle">実装</text>
+    <text x="60" y="84" font-size="10" fill="#e0f2fe" text-anchor="middle">Implement</text>
+  </g>
+  <text x="550" y="100" font-size="10" fill="#0c4a6e" text-anchor="middle">設定ファイルを作る</text>
+  <text x="550" y="245" font-size="10" fill="#0c4a6e" text-anchor="middle">.claude/ 配下に配置</text>
+  
+  <!-- ステップ4: 検証 -->
+  <g transform="translate(700, 130)">
+    <circle cx="60" cy="60" r="55" fill="#0ea5e9" stroke="#0284c7" stroke-width="2.5"/>
+    <text x="60" y="50" font-size="13" font-weight="bold" fill="white" text-anchor="middle">④</text>
+    <text x="60" y="68" font-size="14" font-weight="bold" fill="white" text-anchor="middle">検証</text>
+    <text x="60" y="84" font-size="10" fill="#e0f2fe" text-anchor="middle">Verify</text>
+  </g>
+  <text x="760" y="120" font-size="10" fill="#0c4a6e" text-anchor="middle">意図通り動くか試す</text>
+  <text x="760" y="265" font-size="10" fill="#0c4a6e" text-anchor="middle">過剰反応がないか</text>
+  
+  <!-- ステップ5: 運用（循環の左側） -->
+  <g transform="translate(380, 440)">
+    <circle cx="80" cy="80" r="70" fill="#10b981" stroke="#059669" stroke-width="3"/>
+    <text x="80" y="65" font-size="13" font-weight="bold" fill="white" text-anchor="middle">⑤</text>
+    <text x="80" y="88" font-size="16" font-weight="bold" fill="white" text-anchor="middle">運用</text>
+    <text x="80" y="108" font-size="11" fill="#d1fae5" text-anchor="middle">Operate</text>
+  </g>
+  <text x="460" y="425" font-size="11" fill="#065f46" text-anchor="middle">日常開発で使う</text>
+  
+  <!-- ステップ6: アップデート（循環の右側） -->
+  <g transform="translate(740, 440)">
+    <circle cx="80" cy="80" r="70" fill="#10b981" stroke="#059669" stroke-width="3"/>
+    <text x="80" y="65" font-size="13" font-weight="bold" fill="white" text-anchor="middle">⑥</text>
+    <text x="80" y="88" font-size="14" font-weight="bold" fill="white" text-anchor="middle">アップデート</text>
+    <text x="80" y="108" font-size="11" fill="#d1fae5" text-anchor="middle">Update</text>
+  </g>
+  <text x="820" y="425" font-size="11" fill="#065f46" text-anchor="middle">気づきに応じて改修</text>
+  
+  <!-- ステップ7: 廃棄（右下、出口） -->
+  <g transform="translate(990, 670)">
+    <circle cx="60" cy="60" r="55" fill="#64748b" stroke="#334155" stroke-width="2.5"/>
+    <text x="60" y="50" font-size="13" font-weight="bold" fill="white" text-anchor="middle">⑦</text>
+    <text x="60" y="68" font-size="14" font-weight="bold" fill="white" text-anchor="middle">廃棄</text>
+    <text x="60" y="84" font-size="10" fill="#cbd5e1" text-anchor="middle">Retire</text>
+  </g>
+  <text x="1050" y="660" font-size="10" fill="#334155" text-anchor="middle">役目を終えたら削除</text>
+  <text x="1050" y="805" font-size="10" fill="#334155" text-anchor="middle">理由を記録して送り出す</text>
+  
+  <!-- ============================== -->
+  <!-- 矢印（フロー） -->
+  <!-- ============================== -->
+  
+  <!-- ① → ② -->
+  <path d="M 200 240 L 285 200" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrL)"/>
+  
+  <!-- ② → ③ -->
+  <path d="M 400 190 L 495 170" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrL)"/>
+  
+  <!-- ③ → ④ -->
+  <path d="M 610 170 L 705 190" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrL)"/>
+  
+  <!-- ④ → ⑤ (運用へ入る) -->
+  <path d="M 760 250 Q 700 350, 530 470" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrL)"/>
+  
+  <!-- ⑤ → ⑥ (運用→アップデート、循環) -->
+  <path d="M 525 520 Q 600 480, 740 520" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrCycle)"/>
+  <text x="615" y="488" font-size="12" font-weight="bold" fill="#065f46" text-anchor="middle">運用中のトリガーで</text>
+  
+  <!-- ⑥ → ⑤ (アップデート→運用、循環) -->
+  <path d="M 740 555 Q 600 595, 525 555" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrCycle)"/>
+  <text x="615" y="595" font-size="12" font-weight="bold" fill="#065f46" text-anchor="middle">改修後に運用へ戻る</text>
+  
+  <!-- ⑥ → ⑦ (廃棄へ) -->
+  <path d="M 870 540 Q 950 600, 1000 670" stroke="#475569" stroke-width="2" fill="none" stroke-dasharray="5,3" marker-end="url(#arrL)"/>
+  <text x="985" y="595" font-size="10" fill="#334155" font-style="italic">役目終了</text>
+  
+  <!-- ============================== -->
+  <!-- 左下：①〜④の特徴説明 -->
+  <!-- ============================== -->
+  <g transform="translate(40, 670)">
+    <rect width="430" height="160" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="20" y="28" font-size="13" font-weight="bold" fill="#78350f">準備フェーズ（①〜④）</text>
+    <line x1="20" y1="36" x2="410" y2="36" stroke="#fcd34d"/>
+    <text x="20" y="58" font-size="11" fill="#78350f">・1つのトリガー（§5.3.2）から始まる</text>
+    <text x="20" y="78" font-size="11" fill="#78350f">・種別選択（§5.3.4）を間違えると機能しない</text>
+    <text x="20" y="98" font-size="11" fill="#78350f">・検証なしの本格運用は、未テストコードを本番投入するのと同じ</text>
+    <text x="20" y="118" font-size="11" fill="#78350f">・準備フェーズは比較的短期間で完了する</text>
+    <text x="20" y="145" font-size="10" font-style="italic" fill="#92400e">「新メンバーの入社準備」に相当</text>
+  </g>
+  
+  <!-- 中央下：⑤⑥の循環の説明 -->
+  <g transform="translate(485, 670)">
+    <rect width="430" height="160" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+    <text x="20" y="28" font-size="13" font-weight="bold" fill="#065f46">運用・改善フェーズ（⑤⇄⑥）</text>
+    <line x1="20" y1="36" x2="410" y2="36" stroke="#6ee7b7"/>
+    <text x="20" y="58" font-size="11" fill="#065f46">・このフェーズが最も長い。数ヶ月〜数年単位</text>
+    <text x="20" y="78" font-size="11" fill="#065f46">・運用中の気づきがアップデートのトリガーになる</text>
+    <text x="20" y="98" font-size="11" fill="#065f46">・レトロでアップデートを議題化（§5.3.5）</text>
+    <text x="20" y="118" font-size="11" fill="#065f46">・スプリントごとに最低1つの改善を目標</text>
+    <text x="20" y="145" font-size="10" font-style="italic" fill="#047857">「新メンバーを育てる」に相当</text>
+  </g>
+  
+  <!-- 右下：⑦の説明（小さめ） -->
+  <g transform="translate(930, 670)">
+    <rect width="240" height="160" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+    <text x="20" y="28" font-size="13" font-weight="bold" fill="#1e293b">廃棄フェーズ（⑦）</text>
+    <line x1="20" y1="36" x2="220" y2="36" stroke="#94a3b8"/>
+    <text x="20" y="58" font-size="11" fill="#334155">・古いものを残すと</text>
+    <text x="20" y="73" font-size="11" fill="#334155">　ノイズになる</text>
+    <text x="20" y="93" font-size="11" fill="#334155">・廃棄理由を記録</text>
+    <text x="20" y="113" font-size="11" fill="#334155">・明示的に削除する</text>
+    <text x="20" y="145" font-size="10" font-style="italic" fill="#475569">「卒業・引退」に相当</text>
+  </g>
+  
+  <!-- ============================== -->
+  <!-- 凡例（左上） -->
+  <!-- ============================== -->
+  <g transform="translate(40, 110)">
+    <rect width="220" height="80" rx="6" fill="white" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="15" y="22" font-size="11" font-weight="bold" fill="#1e293b">凡例</text>
+    <circle cx="25" cy="40" r="7" fill="#fbbf24"/>
+    <text x="40" y="44" font-size="10" fill="#334155">準備(一度きり)</text>
+    <circle cx="25" cy="58" r="7" fill="#0ea5e9"/>
+    <text x="40" y="62" font-size="10" fill="#334155">設計・実装・検証</text>
+    <circle cx="130" cy="40" r="7" fill="#10b981"/>
+    <text x="145" y="44" font-size="10" fill="#334155">循環(長期)</text>
+    <circle cx="130" cy="58" r="7" fill="#64748b"/>
+    <text x="145" y="62" font-size="10" fill="#334155">廃棄</text>
+  </g>
+  
+  <!-- ============================== -->
+  <!-- 右上：ガードレールの上位分類（Guides / Sensors） -->
+  <!-- ============================== -->
+  <g transform="translate(870, 110)">
+    <rect width="310" height="135" rx="6" fill="white" stroke="#475569" stroke-width="1.5"/>
+    <text x="15" y="22" font-size="12" font-weight="bold" fill="#1e293b">ガードレールの上位分類(§5.3.4)</text>
+    <line x1="15" y1="30" x2="295" y2="30" stroke="#cbd5e1"/>
+    
+    <!-- Guides -->
+    <rect x="15" y="40" width="135" height="80" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="82" y="58" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">Guides</text>
+    <text x="82" y="73" font-size="9" fill="#1e40af" text-anchor="middle">能動的な文脈供給</text>
+    <line x1="25" y1="80" x2="140" y2="80" stroke="#93c5fd"/>
+    <text x="82" y="93" font-size="9" fill="#1e40af" text-anchor="middle">CLAUDE.md / 用語集</text>
+    <text x="82" y="106" font-size="9" fill="#1e40af" text-anchor="middle">規約文書 / 構造</text>
+    <text x="82" y="116" font-size="8" fill="#3b82f6" text-anchor="middle" font-style="italic">「間違えさせない」</text>
+    
+    <!-- Sensors -->
+    <rect x="160" y="40" width="135" height="80" rx="4" fill="#fef3c7" stroke="#d97706"/>
+    <text x="227" y="58" font-size="11" font-weight="bold" fill="#78350f" text-anchor="middle">Sensors</text>
+    <text x="227" y="73" font-size="9" fill="#92400e" text-anchor="middle">事後的な検知・反応</text>
+    <line x1="170" y1="80" x2="285" y2="80" stroke="#fcd34d"/>
+    <text x="227" y="93" font-size="9" fill="#92400e" text-anchor="middle">Claude Hooks / Lint</text>
+    <text x="227" y="106" font-size="9" fill="#92400e" text-anchor="middle">CI / 自動レビュー</text>
+    <text x="227" y="116" font-size="8" fill="#b45309" text-anchor="middle" font-style="italic">「即座に検知する」</text>
+  </g>
+  
+  <!-- 矢印定義 -->
+  <defs>
+    <marker id="arrL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrCycle" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/>
+    </marker>
+  </defs>
+</svg>

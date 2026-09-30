@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 720" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+  <rect width="1300" height="720" fill="#f8fafc"/>
+  
+  <!-- タイトル -->
+  <text x="40" y="48" font-size="24" font-weight="bold" fill="#1e293b">GenAIとの協働の段階的深化(Phase 0〜3)</text>
+  <text x="40" y="76" font-size="14" fill="#64748b">Phaseが進むほどAIの自律度は上がる。ただし採否(Yes/No)の最終ゲートは、全Phaseで人間に残る。</text>
+  
+  <!-- ============================== -->
+  <!-- 上部：Phase進行の矢印帯 -->
+  <!-- ============================== -->
+  <g transform="translate(60, 110)">
+    <rect width="1180" height="40" rx="20" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="20" y="26" font-size="12" font-weight="bold" fill="#3730a3">▶ AI協働の成熟度(個人単位・領域別の混在を許容)</text>
+    <text x="900" y="26" font-size="11" fill="#3730a3" font-style="italic">連続的なグラデーション(先取り学習を推奨)</text>
+  </g>
+  
+  <!-- Phase間の矢印 -->
+  <path d="M 350 250 L 380 250" stroke="#6366f1" stroke-width="3" fill="none" marker-end="url(#arrPhase)"/>
+  <path d="M 640 250 L 670 250" stroke="#6366f1" stroke-width="3" fill="none" marker-end="url(#arrPhase)"/>
+  <path d="M 930 250 L 960 250" stroke="#6366f1" stroke-width="3" fill="none" marker-end="url(#arrPhase)"/>
+  
+  <!-- ============================== -->
+  <!-- Phase 0: 接触 -->
+  <!-- ============================== -->
+  <g transform="translate(60, 170)">
+    <rect width="290" height="320" rx="10" fill="white" stroke="#94a3b8" stroke-width="2"/>
+    <rect width="290" height="50" rx="10" fill="#64748b"/>
+    <rect y="40" width="290" height="12" fill="#64748b"/>
+    <text x="145" y="22" font-size="12" font-weight="bold" fill="#cbd5e1" text-anchor="middle">Phase 0</text>
+    <text x="145" y="42" font-size="18" font-weight="bold" fill="white" text-anchor="middle">接触</text>
+    
+    <!-- AIの位置付け -->
+    <text x="20" y="80" font-size="11" font-weight="bold" fill="#475569">🤖 AIの位置付け</text>
+    <rect x="20" y="88" width="250" height="40" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="145" y="105" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">試行対象</text>
+    <text x="145" y="120" font-size="10" fill="#475569" text-anchor="middle">何ができるかを探る相手</text>
+    
+    <!-- 人間の役割 -->
+    <text x="20" y="155" font-size="11" font-weight="bold" fill="#475569">👤 人間の役割</text>
+    <rect x="20" y="163" width="250" height="40" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="145" y="180" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">触る・対話する</text>
+    <text x="145" y="195" font-size="10" fill="#475569" text-anchor="middle">慣れる・感覚を掴む</text>
+    
+    <!-- 自律度バー -->
+    <text x="20" y="230" font-size="11" font-weight="bold" fill="#475569">AIの自律度</text>
+    <rect x="20" y="238" width="250" height="14" rx="7" fill="#e2e8f0"/>
+    <rect x="20" y="238" width="40" height="14" rx="7" fill="#94a3b8"/>
+    <text x="275" y="249" font-size="9" fill="#64748b" text-anchor="end">▏</text>
+    
+    <!-- 典型的な使い方 -->
+    <text x="20" y="278" font-size="11" font-weight="bold" fill="#475569">💡 典型的な使い方</text>
+    <text x="20" y="296" font-size="10" fill="#475569">・チャットで質問してみる</text>
+    <text x="20" y="310" font-size="10" fill="#475569">・小さな処理を試しに頼む</text>
+  </g>
+  
+  <!-- ============================== -->
+  <!-- Phase 1: ナビゲーター -->
+  <!-- ============================== -->
+  <g transform="translate(380, 170)">
+    <rect width="290" height="320" rx="10" fill="white" stroke="#0ea5e9" stroke-width="2"/>
+    <rect width="290" height="50" rx="10" fill="#0ea5e9"/>
+    <rect y="40" width="290" height="12" fill="#0ea5e9"/>
+    <text x="145" y="22" font-size="12" font-weight="bold" fill="#e0f2fe" text-anchor="middle">Phase 1</text>
+    <text x="145" y="42" font-size="18" font-weight="bold" fill="white" text-anchor="middle">ナビゲーター</text>
+    
+    <text x="20" y="80" font-size="11" font-weight="bold" fill="#475569">🤖 AIの位置付け</text>
+    <rect x="20" y="88" width="250" height="40" rx="4" fill="#e0f2fe" stroke="#0ea5e9"/>
+    <text x="145" y="105" font-size="13" font-weight="bold" fill="#0c4a6e" text-anchor="middle">道具・副操縦士</text>
+    <text x="145" y="120" font-size="10" fill="#0c4a6e" text-anchor="middle">指示通りに動くアシスタント</text>
+    
+    <text x="20" y="155" font-size="11" font-weight="bold" fill="#475569">👤 人間の役割</text>
+    <rect x="20" y="163" width="250" height="40" rx="4" fill="#e0f2fe" stroke="#0ea5e9"/>
+    <text x="145" y="180" font-size="13" font-weight="bold" fill="#0c4a6e" text-anchor="middle">判断・採否は全て人間</text>
+    <text x="145" y="195" font-size="10" fill="#0c4a6e" text-anchor="middle">SubTask単位でレビュー必須</text>
+    
+    <text x="20" y="230" font-size="11" font-weight="bold" fill="#475569">AIの自律度</text>
+    <rect x="20" y="238" width="250" height="14" rx="7" fill="#e2e8f0"/>
+    <rect x="20" y="238" width="90" height="14" rx="7" fill="#0ea5e9"/>
+    <text x="275" y="249" font-size="9" fill="#64748b" text-anchor="end">▏</text>
+    
+    <text x="20" y="278" font-size="11" font-weight="bold" fill="#475569">💡 典型的な使い方</text>
+    <text x="20" y="296" font-size="10" fill="#475569">・Slash Commandで定型作業</text>
+    <text x="20" y="310" font-size="10" fill="#475569">・コード生成は人間がレビュー</text>
+  </g>
+  
+  <!-- ============================== -->
+  <!-- Phase 2: バディ -->
+  <!-- ============================== -->
+  <g transform="translate(670, 170)">
+    <rect width="290" height="320" rx="10" fill="white" stroke="#10b981" stroke-width="2"/>
+    <rect width="290" height="50" rx="10" fill="#10b981"/>
+    <rect y="40" width="290" height="12" fill="#10b981"/>
+    <text x="145" y="22" font-size="12" font-weight="bold" fill="#d1fae5" text-anchor="middle">Phase 2</text>
+    <text x="145" y="42" font-size="18" font-weight="bold" fill="white" text-anchor="middle">バディ</text>
+    
+    <text x="20" y="80" font-size="11" font-weight="bold" fill="#475569">🤖 AIの位置付け</text>
+    <rect x="20" y="88" width="250" height="40" rx="4" fill="#d1fae5" stroke="#10b981"/>
+    <text x="145" y="105" font-size="13" font-weight="bold" fill="#065f46" text-anchor="middle">あなたの相棒</text>
+    <text x="145" y="120" font-size="10" fill="#065f46" text-anchor="middle">専門領域で並走するパートナー</text>
+    
+    <text x="20" y="155" font-size="11" font-weight="bold" fill="#475569">👤 人間の役割</text>
+    <rect x="20" y="163" width="250" height="40" rx="4" fill="#d1fae5" stroke="#10b981"/>
+    <text x="145" y="180" font-size="13" font-weight="bold" fill="#065f46" text-anchor="middle">発案・トリガ・結果確認</text>
+    <text x="145" y="195" font-size="10" fill="#065f46" text-anchor="middle">SubTask単位の委任を許容</text>
+    
+    <text x="20" y="230" font-size="11" font-weight="bold" fill="#475569">AIの自律度</text>
+    <rect x="20" y="238" width="250" height="14" rx="7" fill="#e2e8f0"/>
+    <rect x="20" y="238" width="160" height="14" rx="7" fill="#10b981"/>
+    <text x="275" y="249" font-size="9" fill="#64748b" text-anchor="end">▏</text>
+    
+    <text x="20" y="278" font-size="11" font-weight="bold" fill="#475569">💡 典型的な使い方</text>
+    <text x="20" y="296" font-size="10" fill="#475569">・Subagentによる一次レビュー</text>
+    <text x="20" y="310" font-size="10" fill="#475569">・Plan/PRDレビューは人間</text>
+  </g>
+  
+  <!-- ============================== -->
+  <!-- Phase 3: 自律 -->
+  <!-- ============================== -->
+  <g transform="translate(960, 170)">
+    <rect width="290" height="320" rx="10" fill="white" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="290" height="50" rx="10" fill="#8b5cf6"/>
+    <rect y="40" width="290" height="12" fill="#8b5cf6"/>
+    <text x="145" y="22" font-size="12" font-weight="bold" fill="#ede9fe" text-anchor="middle">Phase 3</text>
+    <text x="145" y="42" font-size="18" font-weight="bold" fill="white" text-anchor="middle">自律</text>
+    
+    <text x="20" y="80" font-size="11" font-weight="bold" fill="#475569">🤖 AIの位置付け</text>
+    <rect x="20" y="88" width="250" height="40" rx="4" fill="#ede9fe" stroke="#8b5cf6"/>
+    <text x="145" y="105" font-size="13" font-weight="bold" fill="#5b21b6" text-anchor="middle">自律エージェント</text>
+    <text x="145" y="120" font-size="10" fill="#5b21b6" text-anchor="middle">ゴールから多面的に作業</text>
+    
+    <text x="20" y="155" font-size="11" font-weight="bold" fill="#475569">👤 人間の役割</text>
+    <rect x="20" y="163" width="250" height="40" rx="4" fill="#ede9fe" stroke="#8b5cf6"/>
+    <text x="145" y="180" font-size="13" font-weight="bold" fill="#5b21b6" text-anchor="middle">ゴール提示と監督</text>
+    <text x="145" y="195" font-size="10" fill="#5b21b6" text-anchor="middle">プロダクト単位の委任を許容</text>
+    
+    <text x="20" y="230" font-size="11" font-weight="bold" fill="#475569">AIの自律度</text>
+    <rect x="20" y="238" width="250" height="14" rx="7" fill="#e2e8f0"/>
+    <rect x="20" y="238" width="230" height="14" rx="7" fill="#8b5cf6"/>
+    <text x="275" y="249" font-size="9" fill="#64748b" text-anchor="end">▏</text>
+    
+    <text x="20" y="278" font-size="11" font-weight="bold" fill="#475569">💡 典型的な使い方</text>
+    <text x="20" y="296" font-size="10" fill="#475569">・自律エージェントが多面レビュー</text>
+    <text x="20" y="310" font-size="10" fill="#475569">・ゴール・採否は人間</text>
+  </g>
+  
+  <!-- ============================== -->
+  <!-- 中央下：全Phase共通の採否ゲート -->
+  <!-- ============================== -->
+  <g transform="translate(60, 520)">
+    <rect width="1180" height="80" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+    <text x="20" y="28" font-size="14" font-weight="bold" fill="#991b1b">🚦 全Phase共通:採否(Yes/No)の最終ゲートは人間に残る</text>
+    <text x="20" y="52" font-size="12" fill="#7f1d1d">Phaseが上がるほどAIに委ねる作業範囲は広がるが、生成物を「採用するか・修正させるか・却下するか」の判断は、全Phaseで人間が握り続ける。</text>
+    <text x="20" y="70" font-size="12" fill="#7f1d1d">「丸投げ」と「委任」の境界は、採否責務を人間が握っているかで判定する。採否を人間が手放した瞬間にそれは「丸投げ」になる。</text>
+  </g>
+  
+  <!-- ============================== -->
+  <!-- 下部：運用原則 -->
+  <!-- ============================== -->
+  <g transform="translate(60, 620)">
+    <rect width="1180" height="80" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+    <text x="20" y="24" font-size="13" font-weight="bold" fill="#1e293b">💡 Phaseモデルの4つの運用原則(§5.0)</text>
+    <text x="20" y="44" font-size="11" fill="#334155">① 連続的なグラデーション:先取り学習を推奨    　② 個人単位で判定:領域別の混在を許容(例:UIはPhase 2、DB設計はPhase 1)</text>
+    <text x="20" y="62" font-size="11" fill="#334155">③ 不可逆ではない:メンバー交代・技術変更でPhaseが下がることを許容    　④ 採否の最終ゲートは全Phaseで人間に残る</text>
+  </g>
+  
+  <!-- 矢印定義 -->
+  <defs>
+    <marker id="arrPhase" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1"/>
+    </marker>
+  </defs>
+</svg>

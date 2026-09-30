@@ -1,0 +1,54 @@
+<svg width="100%" viewBox="0 0 680 590" xmlns="http://www.w3.org/2000/svg" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+<rect width="680" height="590" fill="#f8fafc"/>
+<defs>
+<marker id="oarr" markerUnits="userSpaceOnUse" viewBox="0 0 16 16" refX="12" refY="8" markerWidth="18" markerHeight="18" orient="auto-start-reverse"><path d="M3 2L13 8L3 14" fill="none" stroke="#F0993F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="parr" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M2 1.5L9.5 6L2 10.5" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="340" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e293b">スプリント内の日々 ― Level 1・2（コードを育てる更新）</text>
+<rect x="20" y="40" width="640" height="492" rx="12" fill="none" stroke="#9E9E9E" stroke-width="1.2" stroke-dasharray="6 5"/>
+<circle cx="48" cy="60" r="4" fill="#546E7A"/><rect x="43" y="65" width="10" height="9" rx="3" fill="#546E7A"/>
+<circle cx="62" cy="56" r="4" fill="#37474F"/><rect x="57" y="61" width="10" height="9" rx="3" fill="#37474F"/>
+<circle cx="76" cy="60" r="4" fill="#546E7A"/><rect x="71" y="65" width="10" height="9" rx="3" fill="#546E7A"/>
+<text x="95" y="63" font-size="12" fill="#37474F">デイリースクラム／設計・実装・テスト（図1の拡大）</text>
+<g><rect x="115" y="88" width="460" height="30" rx="15" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="345" y="103" text-anchor="middle" dominant-baseline="middle" font-size="13" fill="#5b21b6"><tspan font-size="20" font-weight="bold" fill="#7c3aed">↻</tspan> Level 2 ― Story内：S で足し、S-final で整える（受入は L0→L5 へ）</text></g>
+<rect x="50" y="128" width="130" height="84" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
+<text x="115" y="146" text-anchor="middle" font-size="13" fill="#263238">S0 スケルトン</text>
+<text x="115" y="170" text-anchor="middle" font-size="11" fill="#37474F">A: 骨格・UT1本(fail)</text>
+<text x="115" y="190" text-anchor="middle" font-size="11" fill="#37474F">B: 受入 L1 (pending)</text>
+<line x1="182" y1="170" x2="196" y2="170" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<rect x="200" y="128" width="130" height="84" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
+<text x="265" y="146" text-anchor="middle" font-size="13" fill="#263238">S1 ハッピーパス</text>
+<text x="265" y="170" text-anchor="middle" font-size="11" fill="#37474F">A: TDDで実装</text>
+<text x="265" y="190" text-anchor="middle" font-size="11" fill="#37474F">B: 受入 L3 Green</text>
+<line x1="332" y1="170" x2="346" y2="170" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<rect x="350" y="128" width="130" height="84" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
+<text x="415" y="146" text-anchor="middle" font-size="13" fill="#263238">S2… バリエーション</text>
+<text x="415" y="170" text-anchor="middle" font-size="11" fill="#37474F">A: 入力パターン追加</text>
+<text x="415" y="190" text-anchor="middle" font-size="11" fill="#37474F">B: 受入 L4 追加</text>
+<line x1="482" y1="170" x2="496" y2="170" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<rect x="500" y="128" width="130" height="84" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
+<text x="565" y="146" text-anchor="middle" font-size="13" fill="#263238">S-final 仕上げ</text>
+<text x="565" y="170" text-anchor="middle" font-size="11" fill="#37474F">A: リファクタ</text>
+<text x="565" y="190" text-anchor="middle" font-size="11" fill="#37474F">B: 受入 L5 安定</text>
+<line x1="56" y1="214" x2="50" y2="290" stroke="#8b5cf6" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="624" y1="214" x2="504" y2="290" stroke="#8b5cf6" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="340" y="252" text-anchor="middle" font-size="12" fill="#37474F">各スライスのトラックAの内側で、毎回これが回る</text>
+<g><rect x="30" y="294" width="490" height="30" rx="15" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="275" y="309" text-anchor="middle" dominant-baseline="middle" font-size="13" fill="#5b21b6"><tspan font-size="20" font-weight="bold" fill="#7c3aed">↻</tspan> Level 1 ― Subtask内：テストと実装をメソッド単位で交互に刻む</text></g>
+<rect x="168" y="338" width="64" height="26" rx="13" fill="#E53935"/><text x="200" y="351" text-anchor="middle" font-size="12" fill="#FFFFFF">Red</text>
+<rect x="232" y="414" width="64" height="26" rx="13" fill="#43A047"/><text x="264" y="427" text-anchor="middle" font-size="12" fill="#FFFFFF">Green</text>
+<rect x="104" y="414" width="80" height="26" rx="13" fill="#1E88E5"/><text x="144" y="427" text-anchor="middle" font-size="12" fill="#FFFFFF">Refactor</text>
+<path d="M236 362 Q270 382 268 410" fill="none" stroke="#8b5cf6" stroke-width="2.2" marker-end="url(#parr)"/>
+<path d="M230 436 Q200 456 188 438" fill="none" stroke="#8b5cf6" stroke-width="2.2" marker-end="url(#parr)"/>
+<path d="M120 410 Q118 376 162 352" fill="none" stroke="#8b5cf6" stroke-width="2.2" marker-end="url(#parr)"/>
+<text x="200" y="392" text-anchor="middle" font-size="12" fill="#37474F">分〜時間で</text>
+<text x="200" y="408" text-anchor="middle" font-size="12" fill="#37474F">何度も回る</text>
+<rect x="370" y="332" width="290" height="150" rx="10" fill="#FAFAFA" stroke="#BDBDBD"/>
+<text x="385" y="352" font-size="13" fill="#263238">刻み方の例（1スライスの内側）</text>
+<text x="385" y="378" font-size="12" fill="#37474F">名前のテストを書く → 実装する</text>
+<text x="385" y="400" font-size="12" fill="#37474F">基本給のテストを書く → 実装する</text>
+<text x="385" y="422" font-size="12" fill="#37474F">給料計算のテストを書く → 実装する</text>
+<text x="385" y="444" font-size="12" fill="#37474F">重複をなくし整える（Refactor）</text>
+<text x="385" y="466" font-size="12" fill="#37474F">※ 全テストを先に書くのではない</text>
+<text x="340" y="552" text-anchor="middle" font-size="12" fill="#37474F">紫の↻＝進化の更新。Level 1・2 はコードを育てる（本図）、Level 3 は仕組みを育てる（図1）</text>
+<text x="340" y="572" text-anchor="middle" font-size="12" fill="#37474F">内側ほど速い：Level 1＝分〜時間 ／ Level 2＝日〜スプリント内 ／ Level 3＝スプリント跨ぎ</text>
+</svg>

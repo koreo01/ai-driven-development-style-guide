@@ -1,0 +1,382 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+  <rect width="1600" height="900" fill="#f8fafc"/>
+  
+  <!-- タイトル -->
+  <text x="40" y="50" font-size="28" font-weight="bold" fill="#1e293b">基本的なValue Stream</text>
+  <text x="40" y="80" font-size="15" fill="#64748b">Local環境で「合格」と判定されたものだけをPush。その合格判定を複数のAI機能が手分けして担う。</text>
+  
+  <!-- ========================================= -->
+  <!-- 左ゾーン: Local開発環境 (AI駆動の主戦場) -->
+  <!-- ========================================= -->
+  <rect x="30" y="110" width="780" height="740" rx="12" fill="#fef9c3" stroke="#eab308" stroke-width="2.5"/>
+  
+  <!-- ゾーンヘッダ -->
+  <g transform="translate(30, 110)">
+    <rect width="780" height="50" rx="12" fill="#eab308"/>
+    <rect y="38" width="780" height="12" fill="#eab308"/>
+    <text x="20" y="33" font-size="18" font-weight="bold" fill="white">🖥 Local開発環境（人 × 複数のGenAI Agent / Command）</text>
+    <text x="760" y="33" font-size="14" fill="#fef9c3" text-anchor="end">AI駆動の主戦場</text>
+  </g>
+  
+  <!-- 開発者アイコン（中央） -->
+  <g transform="translate(170, 260)">
+    <circle r="48" fill="#6366f1"/>
+    <circle cx="0" cy="-16" r="16" fill="white"/>
+    <path d="M -26 18 Q -26 -4 0 -4 Q 26 -4 26 18 L 26 32 L -26 32 Z" fill="white"/>
+    <text y="75" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">開発者（1人）</text>
+    <text y="95" font-size="12" fill="#64748b" text-anchor="middle">意図・判断・責任</text>
+  </g>
+  
+  <!-- 開発者から右への矢印（作業フロー） -->
+  <path d="M 240 260 L 310 260" stroke="#6366f1" stroke-width="3" fill="none" marker-end="url(#arr-dev)"/>
+  
+  <!-- AI協働ゾーン（開発者の右側） -->
+  <g transform="translate(320, 180)">
+    <rect width="460" height="180" rx="10" fill="white" stroke="#6366f1" stroke-width="2"/>
+    <text x="230" y="25" font-size="14" font-weight="bold" fill="#3730a3" text-anchor="middle">🛡 AI支援による実装＆検証サイクル</text>
+    
+    <!-- 3つのステップ -->
+    <g transform="translate(20, 45)">
+      <rect width="130" height="115" rx="6" fill="#ede9fe" stroke="#8b5cf6"/>
+      <text x="65" y="22" font-size="12" font-weight="bold" fill="#5b21b6" text-anchor="middle">① 意図記述</text>
+      <line x1="10" y1="30" x2="120" y2="30" stroke="#c4b5fd" stroke-dasharray="2,2"/>
+      <text x="65" y="50" font-size="10" fill="#475569" text-anchor="middle">要求・設計を</text>
+      <text x="65" y="65" font-size="10" fill="#475569" text-anchor="middle">人間が言語化</text>
+      <text x="65" y="88" font-size="10" font-weight="bold" fill="#5b21b6" text-anchor="middle">AI：</text>
+      <text x="65" y="103" font-size="9" fill="#5b21b6" text-anchor="middle">CLAUDE.md / MCP</text>
+    </g>
+    
+    <g transform="translate(165, 45)">
+      <rect width="130" height="115" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+      <text x="65" y="22" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">② 生成＆検証</text>
+      <line x1="10" y1="30" x2="120" y2="30" stroke="#93c5fd" stroke-dasharray="2,2"/>
+      <text x="65" y="50" font-size="10" fill="#475569" text-anchor="middle">コード・テストを</text>
+      <text x="65" y="65" font-size="10" fill="#475569" text-anchor="middle">AIと協働で生成</text>
+      <text x="65" y="88" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">AI：</text>
+      <text x="65" y="103" font-size="9" fill="#1e40af" text-anchor="middle">Slash Command</text>
+    </g>
+    
+    <g transform="translate(310, 45)">
+      <rect width="130" height="115" rx="6" fill="#d1fae5" stroke="#10b981"/>
+      <text x="65" y="22" font-size="12" font-weight="bold" fill="#065f46" text-anchor="middle">③ 人間レビュー</text>
+      <line x1="10" y1="30" x2="120" y2="30" stroke="#6ee7b7" stroke-dasharray="2,2"/>
+      <text x="65" y="50" font-size="10" fill="#475569" text-anchor="middle">AI生成物を人が</text>
+      <text x="65" y="65" font-size="10" fill="#475569" text-anchor="middle">判断・採否決定</text>
+      <text x="65" y="88" font-size="10" font-weight="bold" fill="#065f46" text-anchor="middle">AI：</text>
+      <text x="65" y="103" font-size="9" fill="#065f46" text-anchor="middle">Subagent (reviewer)</text>
+    </g>
+    
+    <!-- ①→②→③ の矢印 -->
+    <path d="M 150 102 L 165 102" stroke="#6366f1" stroke-width="2" marker-end="url(#arr-flow)"/>
+    <path d="M 295 102 L 310 102" stroke="#6366f1" stroke-width="2" marker-end="url(#arr-flow)"/>
+  </g>
+  
+  <!-- Local合格ゲート -->
+  <g transform="translate(50, 400)">
+    <rect width="740" height="240" rx="10" fill="white" stroke="#dc2626" stroke-width="2.5"/>
+    <rect width="740" height="40" rx="10" fill="#dc2626"/>
+    <rect y="30" width="740" height="10" fill="#dc2626"/>
+    <text x="370" y="27" font-size="16" font-weight="bold" fill="white" text-anchor="middle">🚦 Local合格ゲート（すべてGreenになるまでPushしない）</text>
+    
+    <!-- 順序を示す「起点」ラベル -->
+    <text x="87" y="56" font-size="10" font-weight="bold" fill="#b91c1c">▶ 起点</text>
+    
+    <!-- チェック5項目を横並び（左からビルド→AC→UT→アーキ→コーディングガイド） -->
+    
+    <!-- ① ビルド・コンパイル（起点・最左） -->
+    <g transform="translate(20, 60)">
+      <rect width="135" height="165" rx="6" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+      <rect width="135" height="28" rx="6" fill="#b91c1c"/>
+      <rect y="20" width="135" height="10" fill="#b91c1c"/>
+      <text x="67" y="19" font-size="12" font-weight="bold" fill="white" text-anchor="middle">ビルド・コンパイル</text>
+      <text x="67" y="50" font-size="10" fill="#475569" text-anchor="middle">型チェック / 構文</text>
+      <text x="67" y="62" font-size="10" fill="#475569" text-anchor="middle">依存解決 / 整合性</text>
+      <line x1="10" y1="72" x2="125" y2="72" stroke="#fca5a5" stroke-dasharray="2,2"/>
+      <text x="67" y="91" font-size="10" font-weight="bold" fill="#9f1239" text-anchor="middle">実行主体</text>
+      <text x="67" y="107" font-size="9" fill="#9f1239" text-anchor="middle">Claude Hooks</text>
+      <text x="67" y="120" font-size="9" fill="#9f1239" text-anchor="middle">(PostToolUse)</text>
+      <text x="67" y="139" font-size="10" font-weight="bold" fill="#9f1239" text-anchor="middle">判定</text>
+      <text x="67" y="155" font-size="9" fill="#9f1239" text-anchor="middle">ツールで自動</text>
+    </g>
+    
+    <!-- ② コーディングガイド -->
+    <g transform="translate(165, 60)">
+      <rect width="135" height="165" rx="6" fill="#fef2f2" stroke="#fca5a5"/>
+      <rect width="135" height="28" rx="6" fill="#ec4899"/>
+      <rect y="20" width="135" height="10" fill="#ec4899"/>
+      <text x="67" y="19" font-size="12" font-weight="bold" fill="white" text-anchor="middle">コーディングガイド</text>
+      <text x="67" y="50" font-size="10" fill="#475569" text-anchor="middle">lint / format</text>
+      <text x="67" y="62" font-size="10" fill="#475569" text-anchor="middle">命名規約違反ゼロ</text>
+      <line x1="10" y1="72" x2="125" y2="72" stroke="#fecaca" stroke-dasharray="2,2"/>
+      <text x="67" y="91" font-size="10" font-weight="bold" fill="#9f1239" text-anchor="middle">実行主体</text>
+      <text x="67" y="107" font-size="9" fill="#9f1239" text-anchor="middle">Claude Hooks</text>
+      <text x="67" y="120" font-size="9" fill="#9f1239" text-anchor="middle">(PostToolUse)</text>
+      <text x="67" y="139" font-size="10" font-weight="bold" fill="#9f1239" text-anchor="middle">判定</text>
+      <text x="67" y="155" font-size="9" fill="#9f1239" text-anchor="middle">lintツールで自動</text>
+    </g>
+    
+    <!-- ③ UT・C0/C1 -->
+    <g transform="translate(310, 60)">
+      <rect width="135" height="165" rx="6" fill="#fef2f2" stroke="#fca5a5"/>
+      <rect width="135" height="28" rx="6" fill="#ec4899"/>
+      <rect y="20" width="135" height="10" fill="#ec4899"/>
+      <text x="67" y="19" font-size="12" font-weight="bold" fill="white" text-anchor="middle">UT・C0/C1</text>
+      <text x="67" y="50" font-size="10" fill="#475569" text-anchor="middle">単体テスト全Green</text>
+      <text x="67" y="62" font-size="10" fill="#475569" text-anchor="middle">カバレッジ達成</text>
+      <line x1="10" y1="72" x2="125" y2="72" stroke="#fecaca" stroke-dasharray="2,2"/>
+      <text x="67" y="91" font-size="10" font-weight="bold" fill="#9f1239" text-anchor="middle">実行主体</text>
+      <text x="67" y="107" font-size="9" fill="#9f1239" text-anchor="middle">tdd-pair</text>
+      <text x="67" y="120" font-size="9" fill="#9f1239" text-anchor="middle">Subagent</text>
+      <text x="67" y="139" font-size="10" font-weight="bold" fill="#9f1239" text-anchor="middle">判定</text>
+      <text x="67" y="155" font-size="9" fill="#9f1239" text-anchor="middle">CI雛形で自動</text>
+    </g>
+    
+    <!-- ④ アーキチェック -->
+    <g transform="translate(455, 60)">
+      <rect width="135" height="165" rx="6" fill="#fef2f2" stroke="#fca5a5"/>
+      <rect width="135" height="28" rx="6" fill="#ec4899"/>
+      <rect y="20" width="135" height="10" fill="#ec4899"/>
+      <text x="67" y="19" font-size="12" font-weight="bold" fill="white" text-anchor="middle">アーキチェック</text>
+      <text x="67" y="50" font-size="10" fill="#475569" text-anchor="middle">依存方向・レイヤ</text>
+      <text x="67" y="62" font-size="10" fill="#475569" text-anchor="middle">違反がゼロ</text>
+      <line x1="10" y1="72" x2="125" y2="72" stroke="#fecaca" stroke-dasharray="2,2"/>
+      <text x="67" y="91" font-size="10" font-weight="bold" fill="#9f1239" text-anchor="middle">実行主体</text>
+      <text x="67" y="107" font-size="9" fill="#9f1239" text-anchor="middle">arch-reviewer</text>
+      <text x="67" y="120" font-size="9" fill="#9f1239" text-anchor="middle">Subagent</text>
+      <text x="67" y="139" font-size="10" font-weight="bold" fill="#9f1239" text-anchor="middle">判定</text>
+      <text x="67" y="155" font-size="9" fill="#9f1239" text-anchor="middle">静的解析で自動</text>
+    </g>
+    
+    <!-- ⑤ Acceptance Test -->
+    <g transform="translate(600, 60)">
+      <rect width="135" height="165" rx="6" fill="#fef2f2" stroke="#fca5a5"/>
+      <rect width="135" height="28" rx="6" fill="#ec4899"/>
+      <rect y="20" width="135" height="10" fill="#ec4899"/>
+      <text x="67" y="19" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Acceptance Test</text>
+      <text x="67" y="50" font-size="10" fill="#475569" text-anchor="middle">シナリオ全通過</text>
+      <text x="67" y="62" font-size="10" fill="#475569" text-anchor="middle">(E2E)</text>
+      <line x1="10" y1="72" x2="125" y2="72" stroke="#fecaca" stroke-dasharray="2,2"/>
+      <text x="67" y="91" font-size="10" font-weight="bold" fill="#9f1239" text-anchor="middle">実行主体</text>
+      <text x="67" y="107" font-size="9" fill="#9f1239" text-anchor="middle">Slash Command</text>
+      <text x="67" y="120" font-size="9" fill="#9f1239" text-anchor="middle">/acceptance</text>
+      <text x="67" y="139" font-size="10" font-weight="bold" fill="#9f1239" text-anchor="middle">判定</text>
+      <text x="67" y="155" font-size="9" fill="#9f1239" text-anchor="middle">人間の合格承認</text>
+    </g>
+    
+    <!-- 起点からの順序を示す矢印（ビルドが他の前提であることを視覚化） -->
+    <path d="M 158 142 L 167 142" stroke="#b91c1c" stroke-width="2" fill="none" marker-end="url(#arr-gate)"/>
+    <path d="M 303 142 L 312 142" stroke="#b91c1c" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arr-gate-light)"/>
+    <path d="M 448 142 L 457 142" stroke="#b91c1c" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arr-gate-light)"/>
+    <path d="M 593 142 L 602 142" stroke="#b91c1c" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arr-gate-light)"/>
+  </g>
+  
+  <!-- ローカル合格判定の説明ボックス -->
+  <g transform="translate(50, 670)">
+    <rect width="740" height="160" rx="8" fill="#fef9c3" stroke="#eab308" stroke-width="1.5"/>
+    <text x="20" y="28" font-size="14" font-weight="bold" fill="#713f12">💡 Local環境でAI機能が手分けする意味</text>
+    <text x="20" y="55" font-size="12" fill="#713f12">・最左のビルド・コンパイル（型チェック/構文/依存解決）が起点。ここが通らなければ他チェックは意味をなさない</text>
+    <text x="20" y="78" font-size="12" fill="#713f12">・人間1人でも複数の「専門家役（Subagent/Command/Hook）」と協働でき、全項目を短時間で合格判定に持ち込める</text>
+    <text x="20" y="101" font-size="12" fill="#713f12">・AIは生成・検証・自動実行を担当。ただし「合格とする」最終判断と採否は人間が握る（③ 人間レビュー）</text>
+    <text x="20" y="124" font-size="12" fill="#713f12">・すべてGreenになるまでPushしない。CI/CDパイプラインへは「既に合格した成果物」のみ渡る</text>
+    <text x="20" y="147" font-size="11" font-style="italic" fill="#92400e">※ AI機能名（tdd-pair, arch-reviewer 等）はリポジトリ運用に合わせて置き換えてください</text>
+  </g>
+  
+  <!-- ========================================= -->
+  <!-- 境界: Git Push -->
+  <!-- ========================================= -->
+  <g transform="translate(815, 440)">
+    <!-- 矢印型のバッジ -->
+    <polygon points="0,0 55,0 75,35 55,70 0,70 20,35" fill="#facc15" stroke="#b45309" stroke-width="2"/>
+    <text x="37" y="32" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">Git</text>
+    <text x="37" y="50" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">Push</text>
+  </g>
+  <text x="852" y="420" font-size="11" fill="#78350f" text-anchor="middle">合格済みのみ</text>
+  <text x="852" y="530" font-size="11" fill="#78350f" text-anchor="middle">PR作成へ</text>
+  
+  <!-- ========================================= -->
+  <!-- 右ゾーン: CI/CDパイプライン (機械の世界) -->
+  <!-- ========================================= -->
+  <rect x="900" y="110" width="670" height="740" rx="12" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2.5"/>
+  
+  <g transform="translate(900, 110)">
+    <rect width="670" height="50" rx="12" fill="#0ea5e9"/>
+    <rect y="38" width="670" height="12" fill="#0ea5e9"/>
+    <text x="20" y="33" font-size="18" font-weight="bold" fill="white">⚙ CI/CDパイプライン（Push以降の自動処理 / AIは関与しない）</text>
+    <text x="650" y="33" font-size="14" fill="#e0f2fe" text-anchor="end">機械の世界</text>
+  </g>
+  
+  <!-- 4ステージ帯 -->
+  <g transform="translate(920, 180)">
+    <polygon points="0,0 140,0 160,25 140,50 0,50 20,25" fill="#1e3a8a"/>
+    <text x="80" y="32" font-size="15" font-weight="bold" fill="white" text-anchor="middle">Development</text>
+  </g>
+  <g transform="translate(1080, 180)">
+    <polygon points="0,0 140,0 160,25 140,50 0,50 20,25" fill="#1e3a8a"/>
+    <text x="80" y="32" font-size="15" font-weight="bold" fill="white" text-anchor="middle">Test</text>
+  </g>
+  <g transform="translate(1240, 180)">
+    <polygon points="0,0 140,0 160,25 140,50 0,50 20,25" fill="#1e3a8a"/>
+    <text x="80" y="32" font-size="15" font-weight="bold" fill="white" text-anchor="middle">Preproduction</text>
+  </g>
+  <g transform="translate(1400, 180)">
+    <polygon points="0,0 140,0 160,25 140,50 0,50 20,25" fill="#1e3a8a"/>
+    <text x="80" y="32" font-size="15" font-weight="bold" fill="white" text-anchor="middle">Production</text>
+  </g>
+  
+  <!-- トリガー名 -->
+  <text x="1000" y="258" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">PR Applied</text>
+  <text x="1000" y="272" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">Trigger Check</text>
+  <text x="1160" y="265" font-size="11" font-weight="bold" fill="#d97706" text-anchor="middle">Merge Trigger Check</text>
+  <text x="1320" y="258" font-size="11" font-weight="bold" fill="#059669" text-anchor="middle">Preparation of</text>
+  <text x="1320" y="272" font-size="11" font-weight="bold" fill="#059669" text-anchor="middle">Sprint Review</text>
+  <text x="1480" y="258" font-size="11" font-weight="bold" fill="#0284c7" text-anchor="middle">Preparation of</text>
+  <text x="1480" y="272" font-size="11" font-weight="bold" fill="#0284c7" text-anchor="middle">GA Release</text>
+  
+  <!-- 各ステージのボックス（簡略化） -->
+  <!-- Development -->
+  <g transform="translate(920, 290)">
+    <rect width="160" height="200" rx="8" fill="white" stroke="#dc2626" stroke-width="2"/>
+    <text x="80" y="22" font-size="11" fill="#475569" text-anchor="middle">Dev-Build</text>
+    <circle cx="80" cy="40" r="8" fill="#10b981"/>
+    <text x="80" y="44" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="70" font-size="11" fill="#475569" text-anchor="middle">Dev-Static Analysis</text>
+    <circle cx="80" cy="88" r="8" fill="#10b981"/>
+    <text x="80" y="92" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="110" font-size="9" fill="#64748b" text-anchor="middle">Architecture / Composition</text>
+    <text x="80" y="122" font-size="9" fill="#64748b" text-anchor="middle">/ SyntaxError</text>
+    <text x="80" y="150" font-size="11" fill="#475569" text-anchor="middle">Dev-UnitTest</text>
+    <circle cx="80" cy="168" r="8" fill="#10b981"/>
+    <text x="80" y="172" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="190" font-size="9" fill="#64748b" text-anchor="middle">自動実行</text>
+  </g>
+  
+  <!-- Test -->
+  <g transform="translate(1080, 290)">
+    <rect width="160" height="200" rx="8" fill="white" stroke="#d97706" stroke-width="2"/>
+    <text x="80" y="22" font-size="11" fill="#475569" text-anchor="middle">Test-Setup</text>
+    <circle cx="80" cy="40" r="8" fill="#10b981"/>
+    <text x="80" y="44" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="70" font-size="11" fill="#475569" text-anchor="middle">Test-Deploy</text>
+    <circle cx="80" cy="88" r="8" fill="#10b981"/>
+    <text x="80" y="92" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="118" font-size="11" fill="#475569" text-anchor="middle">Test-SmokeTest</text>
+    <circle cx="80" cy="136" r="8" fill="#10b981"/>
+    <text x="80" y="140" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="165" font-size="11" fill="#475569" text-anchor="middle">Test-DynamicTesting</text>
+    <circle cx="80" cy="183" r="8" fill="#10b981"/>
+    <text x="80" y="187" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="200" font-size="9" fill="#64748b" text-anchor="middle">DAST / UAT</text>
+  </g>
+  
+  <!-- Preproduction -->
+  <g transform="translate(1240, 290)">
+    <rect width="160" height="200" rx="8" fill="white" stroke="#059669" stroke-width="2"/>
+    <text x="80" y="22" font-size="11" fill="#475569" text-anchor="middle">Preprod-Setup</text>
+    <circle cx="80" cy="40" r="8" fill="#10b981"/>
+    <text x="80" y="44" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="70" font-size="11" fill="#475569" text-anchor="middle">Preprod-InfraScan</text>
+    <circle cx="80" cy="88" r="8" fill="#10b981"/>
+    <text x="80" y="92" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="110" font-size="9" fill="#64748b" text-anchor="middle">Clair / Compliance / OpenVAS</text>
+    <text x="80" y="140" font-size="11" fill="#475569" text-anchor="middle">Preprod-Deploy</text>
+    <text x="80" y="154" font-size="11" fill="#475569" text-anchor="middle">Approval</text>
+    <circle cx="80" cy="172" r="8" fill="#10b981"/>
+    <text x="80" y="176" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="195" font-size="9" fill="#64748b" text-anchor="middle">人間承認あり</text>
+  </g>
+  
+  <!-- Production -->
+  <g transform="translate(1400, 290)">
+    <rect width="160" height="200" rx="8" fill="white" stroke="#0284c7" stroke-width="2"/>
+    <text x="80" y="22" font-size="11" fill="#475569" text-anchor="middle">Production-Deploy</text>
+    <circle cx="80" cy="40" r="8" fill="#10b981"/>
+    <text x="80" y="44" font-size="10" fill="white" text-anchor="middle">✓</text>
+    <text x="80" y="75" font-size="11" fill="#475569" text-anchor="middle">Production-WAF</text>
+    <circle cx="80" cy="93" r="10" fill="none" stroke="#0284c7" stroke-width="2.5"/>
+    <circle cx="80" cy="93" r="4" fill="#0284c7"/>
+    <text x="80" y="115" font-size="9" fill="#64748b" text-anchor="middle">本番WAF適用</text>
+    <text x="80" y="150" font-size="11" fill="#475569" text-anchor="middle">End</text>
+    <text x="80" y="175" font-size="10" fill="#059669" text-anchor="middle" font-weight="bold">✓ Released</text>
+  </g>
+  
+  <!-- ステージ間矢印 -->
+  <path d="M 1080 390 L 1080 390" stroke="#94a3b8" stroke-width="2" fill="none"/>
+  
+  <!-- 右ゾーン下: 各ステージ説明 -->
+  <g transform="translate(920, 510)">
+    <rect width="160" height="110" rx="6" fill="#fef2f2" stroke="#fca5a5"/>
+    <text x="80" y="20" font-size="11" font-weight="bold" fill="#9f1239" text-anchor="middle">Development</text>
+    <text x="80" y="42" font-size="9" fill="#9f1239" text-anchor="middle">Local合格済みを</text>
+    <text x="80" y="55" font-size="9" fill="#9f1239" text-anchor="middle">CIで再検証</text>
+    <text x="80" y="75" font-size="9" fill="#9f1239" text-anchor="middle">→ PR作成前の</text>
+    <text x="80" y="88" font-size="9" fill="#9f1239" text-anchor="middle">最終合格確認</text>
+  </g>
+  
+  <g transform="translate(1080, 510)">
+    <rect width="160" height="110" rx="6" fill="#fef3c7" stroke="#fcd34d"/>
+    <text x="80" y="20" font-size="11" font-weight="bold" fill="#78350f" text-anchor="middle">Test</text>
+    <text x="80" y="42" font-size="9" fill="#78350f" text-anchor="middle">Local環境で検証</text>
+    <text x="80" y="55" font-size="9" fill="#78350f" text-anchor="middle">できない範囲を</text>
+    <text x="80" y="68" font-size="9" fill="#78350f" text-anchor="middle">CIで自動チェック</text>
+    <text x="80" y="88" font-size="9" fill="#78350f" text-anchor="middle">（人マニュアル含む）</text>
+  </g>
+  
+  <g transform="translate(1240, 510)">
+    <rect width="160" height="110" rx="6" fill="#d1fae5" stroke="#6ee7b7"/>
+    <text x="80" y="20" font-size="11" font-weight="bold" fill="#065f46" text-anchor="middle">Preproduction</text>
+    <text x="80" y="42" font-size="9" fill="#065f46" text-anchor="middle">Sprint Reviewを</text>
+    <text x="80" y="55" font-size="9" fill="#065f46" text-anchor="middle">Staging環境で実施</text>
+    <text x="80" y="75" font-size="9" fill="#065f46" text-anchor="middle">動的データ以外は</text>
+    <text x="80" y="88" font-size="9" fill="#065f46" text-anchor="middle">本番と同等</text>
+  </g>
+  
+  <g transform="translate(1400, 510)">
+    <rect width="160" height="110" rx="6" fill="#e0f2fe" stroke="#7dd3fc"/>
+    <text x="80" y="20" font-size="11" font-weight="bold" fill="#0c4a6e" text-anchor="middle">Production</text>
+    <text x="80" y="42" font-size="9" fill="#0c4a6e" text-anchor="middle">本番環境で</text>
+    <text x="80" y="55" font-size="9" fill="#0c4a6e" text-anchor="middle">Service In向け</text>
+    <text x="80" y="70" font-size="9" fill="#0c4a6e" text-anchor="middle">Deploy/Kitting</text>
+    <text x="80" y="88" font-size="9" fill="#0c4a6e" text-anchor="middle">ヘルスケアチェック</text>
+  </g>
+  
+  <!-- 右ゾーン下のまとめ -->
+  <g transform="translate(920, 640)">
+    <rect width="640" height="200" rx="8" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="20" y="28" font-size="14" font-weight="bold" fill="#0c4a6e">⚙ CI/CDパイプラインの役割</text>
+    <text x="20" y="55" font-size="12" fill="#0c4a6e">・Local合格済み成果物を「確認＆配備」するのが主目的</text>
+    <text x="20" y="78" font-size="12" fill="#0c4a6e">・Local環境では困難な検証（Dynamic Testing, Infra Scan, 本番相当環境での動作確認）を実施</text>
+    <text x="20" y="101" font-size="12" fill="#0c4a6e">・ここで初めて不具合が見つかる＝手戻り大きい → Local合格ゲートを厚くする動機になる</text>
+    <text x="20" y="124" font-size="12" fill="#0c4a6e">・AIは関与しない。パイプライン定義とインフラの正しさは別軸の品質管理で担保</text>
+    <line x1="20" y1="140" x2="620" y2="140" stroke="#7dd3fc" stroke-dasharray="3,3"/>
+    <text x="20" y="162" font-size="12" font-weight="bold" fill="#0c4a6e">凡例:</text>
+    <circle cx="80" cy="158" r="7" fill="#10b981"/>
+    <text x="80" y="162" font-size="9" fill="white" text-anchor="middle">✓</text>
+    <text x="95" y="162" font-size="11" fill="#0c4a6e">自動成功</text>
+    <circle cx="175" cy="158" r="9" fill="none" stroke="#0284c7" stroke-width="2"/>
+    <circle cx="175" cy="158" r="3" fill="#0284c7"/>
+    <text x="190" y="162" font-size="11" fill="#0c4a6e">現在の焦点/重要チェック</text>
+  </g>
+  
+  <!-- ========================================= -->
+  <!-- 下部: マクロな流れの要約 -->
+  <!-- ========================================= -->
+  <g transform="translate(30, 862)">
+    <rect width="1540" height="32" rx="6" fill="#1e293b"/>
+    <text x="770" y="21" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Local環境でAIの手分け合格判定 → Pushは合格品のみ → CI/CDは確認＆配備に専念 = 手戻り最小のマクロフロー</text>
+  </g>
+  
+  <defs>
+    <marker id="arr-dev" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1"/>
+    </marker>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1"/>
+    </marker>
+    <marker id="arr-gate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b91c1c"/>
+    </marker>
+    <marker id="arr-gate-light" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b91c1c" opacity="0.5"/>
+    </marker>
+  </defs>
+</svg>

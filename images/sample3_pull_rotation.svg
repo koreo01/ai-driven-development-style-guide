@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+  <rect width="1200" height="850" fill="#f8fafc"/>
+  
+  <text x="40" y="48" font-size="25" font-weight="bold" fill="#1e293b">プル型アサイン × 意図的ローテーション × AI知識共有</text>
+  <text x="40" y="78" font-size="15" fill="#64748b">苦手領域を意図的にプルする際、AIがKT（知識共有）を加速し、サブタスクのサイズ原則の範囲に収める</text>
+  
+  <!-- 左：ボード -->
+  <g transform="translate(60, 115)">
+    <rect width="320" height="340" rx="10" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+    <rect width="320" height="38" rx="10" fill="#475569"/>
+    <rect y="28" width="320" height="10" fill="#475569"/>
+    <text x="160" y="25" font-size="14" font-weight="bold" fill="white" text-anchor="middle">📋 ボード（WIP=1のPBI配下のタスク）</text>
+    
+    <!-- TODO列 -->
+    <text x="30" y="62" font-size="11" font-weight="bold" fill="#64748b">TODO</text>
+    <rect x="20" y="70" width="130" height="42" rx="4" fill="#f1f5f9" stroke="#94a3b8"/>
+    <text x="85" y="88" font-size="10" fill="#334155" text-anchor="middle">[S1] 認証ロジック</text>
+    <text x="85" y="103" font-size="9" fill="#64748b" text-anchor="middle">3H / DB知識必要</text>
+    
+    <rect x="20" y="120" width="130" height="42" rx="4" fill="#f1f5f9" stroke="#94a3b8"/>
+    <text x="85" y="138" font-size="10" fill="#334155" text-anchor="middle">[S1] UI実装</text>
+    <text x="85" y="153" font-size="9" fill="#64748b" text-anchor="middle">3H / FE知識必要</text>
+    
+    <rect x="20" y="170" width="130" height="42" rx="4" fill="#f1f5f9" stroke="#94a3b8"/>
+    <text x="85" y="188" font-size="10" fill="#334155" text-anchor="middle">[S1] E2E疎通</text>
+    <text x="85" y="203" font-size="9" fill="#64748b" text-anchor="middle">3H / Capybara</text>
+    
+    <!-- In Progress列 -->
+    <text x="180" y="62" font-size="11" font-weight="bold" fill="#1e40af">In Progress</text>
+    <rect x="170" y="70" width="130" height="62" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="235" y="88" font-size="10" fill="#1e3a8a" text-anchor="middle">[S0] DB Migration</text>
+    <text x="235" y="103" font-size="9" fill="#1e40af" text-anchor="middle">👤 Cさん (DB苦手)</text>
+    <text x="235" y="120" font-size="9" fill="#1e40af" text-anchor="middle">⏱ 進行中 1.5/3H</text>
+    
+    <!-- Done列 -->
+    <rect x="170" y="170" width="130" height="42" rx="4" fill="#d1fae5" stroke="#10b981"/>
+    <text x="235" y="188" font-size="10" fill="#064e3b" text-anchor="middle">[S0] Route骨格</text>
+    <text x="235" y="203" font-size="9" fill="#065f46" text-anchor="middle">✓ Done</text>
+    
+    <!-- 吹き出し -->
+    <rect x="20" y="230" width="280" height="95" rx="6" fill="#fef9c3" stroke="#eab308" stroke-width="1.5"/>
+    <text x="160" y="250" font-size="11" font-weight="bold" fill="#713f12" text-anchor="middle">プルの原則</text>
+    <text x="160" y="269" font-size="10" fill="#713f12" text-anchor="middle">・リーダー指名ではなく「自発的にプル」</text>
+    <text x="160" y="286" font-size="10" fill="#713f12" text-anchor="middle">・意図的に苦手領域をプル（ローテーション）</text>
+    <text x="160" y="303" font-size="10" fill="#713f12" text-anchor="middle">・各タスクはサブタスクのサイズ原則を厳守</text>
+    <text x="160" y="319" font-size="10" fill="#713f12" text-anchor="middle">・ボトルネックへのヘルプ参加</text>
+  </g>
+  
+  <!-- 中央: Cさん（苦手領域をプル） -->
+  <g transform="translate(445, 200)">
+    <rect width="310" height="260" rx="10" fill="white" stroke="#3b82f6" stroke-width="2.5"/>
+    <rect width="310" height="38" rx="10" fill="#3b82f6"/>
+    <rect y="28" width="310" height="10" fill="#3b82f6"/>
+    <text x="155" y="25" font-size="14" font-weight="bold" fill="white" text-anchor="middle">👤 Cさん（普段はFE担当）</text>
+    
+    <text x="155" y="62" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">意図的に「DB Migration」をプル</text>
+    
+    <!-- 人物アイコン -->
+    <g transform="translate(155, 110)">
+      <circle r="32" fill="#3b82f6"/>
+      <circle cx="0" cy="-11" r="11" fill="white"/>
+      <path d="M -17 11 Q -17 -3 0 -3 Q 17 -3 17 11 L 17 22 L -17 22 Z" fill="white"/>
+    </g>
+    
+    <text x="155" y="165" font-size="11" fill="#475569" text-anchor="middle">💭「DBは苦手...でも知識習得のため」</text>
+    
+    <!-- 課題 -->
+    <rect x="20" y="180" width="270" height="68" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="155" y="200" font-size="11" font-weight="bold" fill="#991b1b" text-anchor="middle">⚠ このままだと起こる課題</text>
+    <text x="155" y="218" font-size="10" fill="#7f1d1d" text-anchor="middle">・4時間を超過しやすい</text>
+    <text x="155" y="233" font-size="10" fill="#7f1d1d" text-anchor="middle">・15分KT依頼で他メンバーの時間を消費</text>
+  </g>
+  
+  <!-- 右: AIガードレールによる支援 -->
+  <g transform="translate(820, 115)">
+    <rect width="320" height="430" rx="10" fill="white" stroke="#6366f1" stroke-width="2.5"/>
+    <rect width="320" height="38" rx="10" fill="#6366f1"/>
+    <rect y="28" width="320" height="10" fill="#6366f1"/>
+    <text x="160" y="25" font-size="14" font-weight="bold" fill="white" text-anchor="middle">🛡 Claudeガードレールの支援</text>
+    
+    <!-- MCP -->
+    <g transform="translate(20, 55)">
+      <rect width="280" height="68" rx="6" fill="#ccfbf1" stroke="#14b8a6" stroke-width="1.5"/>
+      <rect width="280" height="22" rx="6" fill="#14b8a6"/>
+      <rect y="14" width="280" height="8" fill="#14b8a6"/>
+      <text x="140" y="16" font-size="11" font-weight="bold" fill="white" text-anchor="middle">MCP Server（Notion / 過去PR）</text>
+      <text x="140" y="40" font-size="10" fill="#134e4a" text-anchor="middle">過去のMigration事例・命名規約を</text>
+      <text x="140" y="55" font-size="10" fill="#134e4a" text-anchor="middle">即座に参照（KT依頼を不要化）</text>
+    </g>
+    
+    <!-- CLAUDE.md -->
+    <g transform="translate(20, 133)">
+      <rect width="280" height="68" rx="6" fill="#fce7f3" stroke="#ec4899" stroke-width="1.5"/>
+      <rect width="280" height="22" rx="6" fill="#ec4899"/>
+      <rect y="14" width="280" height="8" fill="#ec4899"/>
+      <text x="140" y="16" font-size="11" font-weight="bold" fill="white" text-anchor="middle">CLAUDE.md（チーム規約）</text>
+      <text x="140" y="40" font-size="10" fill="#831843" text-anchor="middle">製品固有のRails/RSpec規約、</text>
+      <text x="140" y="55" font-size="10" fill="#831843" text-anchor="middle">create_xxx命名などを自動適用</text>
+    </g>
+    
+    <!-- Subagent -->
+    <g transform="translate(20, 211)">
+      <rect width="280" height="68" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+      <rect width="280" height="22" rx="6" fill="#10b981"/>
+      <rect y="14" width="280" height="8" fill="#10b981"/>
+      <text x="140" y="16" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Subagent: db-migration-expert</text>
+      <text x="140" y="40" font-size="10" fill="#064e3b" text-anchor="middle">専門家役として並走、設計根拠を</text>
+      <text x="140" y="55" font-size="10" fill="#064e3b" text-anchor="middle">解説しながらレビュー（学習支援）</text>
+    </g>
+    
+    <!-- Slash Command -->
+    <g transform="translate(20, 289)">
+      <rect width="280" height="68" rx="6" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1.5"/>
+      <rect width="280" height="22" rx="6" fill="#0ea5e9"/>
+      <rect y="14" width="280" height="8" fill="#0ea5e9"/>
+      <text x="140" y="16" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Slash Command: /pull-task</text>
+      <text x="140" y="40" font-size="10" fill="#0c4a6e" text-anchor="middle">プル時にタスク文脈・関連コード・</text>
+      <text x="140" y="55" font-size="10" fill="#0c4a6e" text-anchor="middle">過去議事録を一括ブリーフィング</text>
+    </g>
+    
+    <!-- Hook -->
+    <g transform="translate(20, 367)">
+      <rect width="280" height="52" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+      <rect width="280" height="20" rx="6" fill="#f59e0b"/>
+      <rect y="12" width="280" height="8" fill="#f59e0b"/>
+      <text x="140" y="15" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Claude Hooks: サブタスクサイズ監視</text>
+      <text x="140" y="40" font-size="10" fill="#78350f" text-anchor="middle">超過見込みを検知→分解提案</text>
+    </g>
+  </g>
+  
+  <!-- 矢印: Cさん→AI -->
+  <path d="M 755 290 L 820 290" stroke="#6366f1" stroke-width="3" fill="none" marker-end="url(#a3)"/>
+  <text x="787" y="282" font-size="10" fill="#6366f1" text-anchor="middle">支援要請</text>
+  
+  <!-- 矢印: ボード→Cさん（プル） -->
+  <path d="M 380 300 L 445 300" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#a4)"/>
+  <text x="412" y="292" font-size="10" fill="#3b82f6" text-anchor="middle">プル</text>
+  
+  <!-- 下部: スウォーム / ヘルプ参加の説明 -->
+  <g transform="translate(60, 560)">
+    <rect width="1080" height="185" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="25" y="28" font-size="14" font-weight="bold" fill="#334155">💡 他メンバーの動きと共同作業オプション</text>
+    
+    <!-- 他メンバー1 -->
+    <g transform="translate(40, 50)">
+      <rect width="310" height="115" rx="8" fill="white" stroke="#cbd5e1"/>
+      <text x="155" y="22" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">Aさん・Bさん（S0完了済み）</text>
+      <g transform="translate(50, 55)">
+        <circle r="17" fill="#64748b"/>
+        <circle cx="0" cy="-6" r="6" fill="white"/>
+        <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+      </g>
+      <g transform="translate(110, 55)">
+        <circle r="17" fill="#64748b"/>
+        <circle cx="0" cy="-6" r="6" fill="white"/>
+        <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+      </g>
+      <text x="200" y="58" font-size="11" fill="#475569">→ S1に自発的プル</text>
+      <text x="200" y="75" font-size="11" fill="#475569">   認証ロジック ＆ UI</text>
+      <text x="155" y="102" font-size="10" fill="#64748b" text-anchor="middle">同一PBI内で並走（スウォーム）</text>
+    </g>
+    
+    <!-- 他メンバー2 -->
+    <g transform="translate(385, 50)">
+      <rect width="310" height="115" rx="8" fill="white" stroke="#cbd5e1"/>
+      <text x="155" y="22" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">Dさん（ボトルネック検知時）</text>
+      <g transform="translate(80, 55)">
+        <circle r="17" fill="#64748b"/>
+        <circle cx="0" cy="-6" r="6" fill="white"/>
+        <path d="M -9 5 Q -9 -2 0 -2 Q 9 -2 9 5 L 9 12 L -9 12 Z" fill="white"/>
+      </g>
+      <path d="M 110 55 L 140 55" stroke="#ef4444" stroke-width="2" marker-end="url(#a5)"/>
+      <text x="200" y="48" font-size="11" fill="#475569">自タスク中断し</text>
+      <text x="200" y="64" font-size="11" fill="#475569">Cさんのタスクを</text>
+      <text x="200" y="80" font-size="11" fill="#475569">分割してヘルプ</text>
+      <text x="155" y="102" font-size="10" fill="#64748b" text-anchor="middle">ヘルプ参加（サブタスクのサイズ原則遵守のため）</text>
+    </g>
+    
+    <!-- ペア/モブ -->
+    <g transform="translate(730, 50)">
+      <rect width="310" height="115" rx="8" fill="white" stroke="#cbd5e1"/>
+      <text x="155" y="22" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">ペア/モブプロ（推奨オプション）</text>
+      <g transform="translate(50, 55)">
+        <circle r="15" fill="#8b5cf6"/>
+        <circle cx="0" cy="-5" r="5" fill="white"/>
+        <path d="M -8 5 Q -8 -2 0 -2 Q 8 -2 8 5 L 8 10 L -8 10 Z" fill="white"/>
+      </g>
+      <g transform="translate(95, 55)">
+        <circle r="15" fill="#8b5cf6"/>
+        <circle cx="0" cy="-5" r="5" fill="white"/>
+        <path d="M -8 5 Q -8 -2 0 -2 Q 8 -2 8 5 L 8 10 L -8 10 Z" fill="white"/>
+      </g>
+      <g transform="translate(140, 55)">
+        <circle r="15" fill="#8b5cf6"/>
+        <circle cx="0" cy="-5" r="5" fill="white"/>
+        <path d="M -8 5 Q -8 -2 0 -2 Q 8 -2 8 5 L 8 10 L -8 10 Z" fill="white"/>
+      </g>
+      <text x="190" y="52" font-size="11" fill="#475569">複雑なPBI・</text>
+      <text x="190" y="68" font-size="11" fill="#475569">重要な設計決定時</text>
+      <text x="155" y="102" font-size="10" fill="#64748b" text-anchor="middle">Claudeも「第N番目の参加者」として同席可能</text>
+    </g>
+  </g>
+  
+  <!-- 下部まとめ -->
+  <rect x="40" y="765" width="1120" height="60" rx="6" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="600" y="792" font-size="15" font-weight="bold" fill="#3730a3" text-anchor="middle">プル型 × 意図的ローテーションを、AIがKT・文脈供給・時間監視で支える</text>
+  <text x="600" y="814" font-size="12" fill="#475569" text-anchor="middle">知識のサイロ化解消という目的を、メンバー負担を増やさずに実現する</text>
+  
+  <defs>
+    <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1"/>
+    </marker>
+    <marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="a5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+</svg>

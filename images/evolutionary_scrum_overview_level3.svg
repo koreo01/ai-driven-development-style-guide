@@ -1,0 +1,76 @@
+<svg width="100%" viewBox="0 0 680 660" xmlns="http://www.w3.org/2000/svg" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+<rect width="680" height="660" fill="#f8fafc"/>
+<defs>
+<marker id="oarr" markerUnits="userSpaceOnUse" viewBox="0 0 16 16" refX="12" refY="8" markerWidth="18" markerHeight="18" orient="auto-start-reverse"><path d="M3 2L13 8L3 14" fill="none" stroke="#F0993F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="parr" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M2 1.5L9.5 6L2 10.5" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="340" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e293b">スクラム全体像 × Level 3（AI・ガードレール）の更新</text>
+<path d="M70 44 C64 36 52 38 52 48 C52 57 70 66 70 66 C70 66 88 57 88 48 C88 38 76 36 70 44 Z" fill="#7E57C2"/>
+<text x="70" y="86" text-anchor="middle" font-size="12" fill="#37474F">ビジネスプラン</text>
+<line x1="70" y1="98" x2="70" y2="120" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<rect x="48" y="128" width="44" height="30" rx="2" fill="#FFFFFF" stroke="#9E9E9E"/>
+<rect x="53" y="133" width="14" height="9" fill="#90CAF9"/><rect x="70" y="133" width="16" height="9" fill="#FFE082"/><rect x="53" y="145" width="33" height="8" fill="#C8E6C9"/>
+<line x1="53" y1="158" x2="46" y2="180" stroke="#9E9E9E" stroke-width="2"/><line x1="87" y1="158" x2="94" y2="180" stroke="#9E9E9E" stroke-width="2"/><line x1="70" y1="158" x2="70" y2="180" stroke="#9E9E9E" stroke-width="2"/>
+<text x="70" y="196" text-anchor="middle" font-size="12" fill="#37474F">ビジネスモデル</text>
+<text x="70" y="211" text-anchor="middle" font-size="12" fill="#37474F">キャンバス</text>
+<line x1="70" y1="222" x2="70" y2="246" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<g><rect x="48" y="254" width="13" height="9" fill="#7CB342"/><rect x="63" y="254" width="13" height="9" fill="#7CB342"/><rect x="78" y="254" width="13" height="9" fill="#7CB342"/><rect x="48" y="265" width="13" height="9" fill="#7CB342"/><rect x="63" y="265" width="13" height="9" fill="#E53935"/><rect x="78" y="265" width="13" height="9" fill="#7CB342"/><rect x="48" y="276" width="13" height="9" fill="#7CB342"/><rect x="63" y="276" width="13" height="9" fill="#7CB342"/></g>
+<text x="70" y="302" text-anchor="middle" font-size="12" fill="#37474F">プロダクトバックログ</text>
+<path d="M100 304 Q140 350 168 390" fill="none" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<rect x="178" y="382" width="20" height="14" rx="4" fill="#42A5F5"/><rect x="196" y="392" width="20" height="14" rx="4" fill="#66BB6A"/>
+<text x="195" y="424" text-anchor="middle" font-size="12" fill="#37474F">スプリント計画</text>
+<g><rect x="10" y="410" width="116" height="30" rx="15" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="68" y="425" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#5b21b6"><tspan font-size="20" font-weight="bold" fill="#7c3aed">↻</tspan> ②Issue化</text></g>
+<path d="M192 376 Q178 340 164 306" fill="none" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<rect x="147" y="246" width="24" height="30" rx="3" fill="#FFFFFF" stroke="#9E9E9E"/><circle cx="173" cy="250" r="6" fill="#66BB6A"/><text x="173" y="251" text-anchor="middle" font-size="11" fill="#FFFFFF">+</text>
+<text x="160" y="292" text-anchor="middle" font-size="12" fill="#37474F">スプリントバックログ</text>
+<path d="M170 240 Q190 170 208 115" fill="none" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<rect x="220" y="44" width="40" height="32" rx="3" fill="#F7E9A0" stroke="#C9B458"/>
+<line x1="226" y1="54" x2="240" y2="54" stroke="#8D6E63" stroke-width="2"/><line x1="226" y1="62" x2="244" y2="62" stroke="#8D6E63" stroke-width="2"/><line x1="226" y1="70" x2="236" y2="70" stroke="#8D6E63" stroke-width="2"/>
+<text x="240" y="94" text-anchor="middle" font-size="12" fill="#37474F">タスクボード</text>
+<rect x="320" y="46" width="7" height="30" fill="#9E9E9E"/><rect x="330" y="52" width="7" height="24" fill="#9E9E9E"/><rect x="340" y="60" width="7" height="16" fill="#9E9E9E"/><rect x="350" y="66" width="7" height="10" fill="#9E9E9E"/>
+<path d="M320 42 Q340 38 354 56" fill="none" stroke="#E53935" stroke-width="2"/><path d="M350 48 L356 58 L346 57 Z" fill="#E53935"/>
+<text x="340" y="94" text-anchor="middle" font-size="12" fill="#37474F">バーンダウン</text>
+<text x="340" y="109" text-anchor="middle" font-size="12" fill="#37474F">チャート</text>
+<path d="M366 64 Q420 72 466 94" fill="none" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<circle cx="500" cy="108" r="5" fill="#546E7A"/><rect x="493" y="114" width="14" height="15" rx="5" fill="#546E7A"/>
+<circle cx="520" cy="104" r="5" fill="#37474F"/><rect x="513" y="110" width="14" height="15" rx="5" fill="#37474F"/>
+<circle cx="540" cy="108" r="5" fill="#546E7A"/><rect x="533" y="114" width="14" height="15" rx="5" fill="#546E7A"/>
+<rect x="508" y="92" width="8" height="8" rx="2" fill="#FB8C00"/><rect x="528" y="90" width="8" height="8" rx="2" fill="#FFB74D"/>
+<g transform="translate(555 82) scale(1.8)"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" fill="#F0993F"/></g>
+<text x="523" y="150" text-anchor="middle" font-size="12" fill="#37474F">デイリースクラム</text>
+<text x="523" y="165" text-anchor="middle" font-size="12" fill="#37474F">設計・実装・テスト</text>
+<g><rect x="388" y="112" width="84" height="30" rx="15" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="430" y="127" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#5b21b6"><tspan font-size="20" font-weight="bold" fill="#7c3aed">↻</tspan> ①気づく</text></g>
+<path d="M540 172 Q560 208 548 238" fill="none" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<rect x="512" y="244" width="64" height="28" rx="14" fill="#66BB6A"/><text x="544" y="258" text-anchor="middle" font-size="11" fill="#FFFFFF">Buy Now</text>
+<text x="551" y="330" text-anchor="middle" font-size="12" fill="#37474F">動くシステム</text>
+<path d="M562 276 Q592 300 598 326" fill="none" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<circle cx="600" cy="346" r="16" fill="#1E88E5"/><text x="600" y="347" text-anchor="middle" font-size="14" fill="#FFFFFF">¥</text>
+<text x="600" y="376" text-anchor="middle" font-size="12" fill="#37474F">ローンチ</text>
+<path d="M524 276 Q500 350 484 398" fill="none" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<rect x="468" y="404" width="34" height="22" rx="2" fill="#37474F"/><line x1="485" y1="426" x2="485" y2="434" stroke="#37474F" stroke-width="3"/><line x1="476" y1="434" x2="494" y2="434" stroke="#37474F" stroke-width="3"/>
+<circle cx="450" cy="412" r="5" fill="#546E7A"/><rect x="443" y="418" width="14" height="14" rx="5" fill="#546E7A"/>
+<polyline points="506,412 511,418 520,404" fill="none" stroke="#43A047" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="486" y="452" text-anchor="middle" font-size="12" fill="#37474F">スプリントレビュー</text>
+<g><rect x="422" y="462" width="112" height="30" rx="15" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="478" y="477" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#5b21b6"><tspan font-size="20" font-weight="bold" fill="#7c3aed">↻</tspan> ①気づく</text></g>
+<path d="M432 436 Q390 490 348 506" fill="none" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<circle cx="330" cy="512" r="11" fill="none" stroke="#546E7A" stroke-width="2.5"/><line x1="338" y1="520" x2="349" y2="531" stroke="#546E7A" stroke-width="3" stroke-linecap="round"/>
+<text x="332" y="544" text-anchor="middle" font-size="12" fill="#37474F">レトロスペクティブ</text>
+<g><rect x="274" y="552" width="116" height="30" rx="15" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="332" y="567" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#5b21b6"><tspan font-size="20" font-weight="bold" fill="#7c3aed">↻</tspan> ①洗い出す</text></g>
+<path d="M314 519 Q235 530 202 432" fill="none" stroke="#F0993F" stroke-width="5" stroke-linecap="round" marker-end="url(#oarr)"/>
+<rect x="90" y="538" width="182" height="26" rx="4" fill="#F0993F"/><text x="181" y="551" text-anchor="middle" font-size="11" fill="#FFFFFF">スプリント（1〜4週間）を反復</text>
+<path d="M332 580 L332 596 L68 596 L68 440" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#parr)"/>
+<path d="M68 410 L68 305" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#parr)"/>
+<text x="74" y="360" font-size="12" fill="#5b21b6">③PBLへ入る</text>
+<text x="74" y="376" font-size="12" fill="#5b21b6">（PBRで具体化）</text>
+<circle cx="340" cy="250" r="55" fill="#BBDEFB" fill-opacity="0.55" stroke="#64B5F6"/>
+<circle cx="302" cy="325" r="55" fill="#C8E6C9" fill-opacity="0.55" stroke="#81C784"/>
+<circle cx="378" cy="325" r="55" fill="#FFCDD2" fill-opacity="0.55" stroke="#E57373"/>
+<text x="340" y="238" text-anchor="middle" font-size="11" fill="#1565C0">プロダクト</text>
+<text x="340" y="253" text-anchor="middle" font-size="11" fill="#1565C0">オーナー</text>
+<text x="295" y="322" text-anchor="middle" font-size="11" fill="#2E7D32">スクラム</text>
+<text x="295" y="337" text-anchor="middle" font-size="11" fill="#2E7D32">マスター</text>
+<text x="385" y="328" text-anchor="middle" font-size="11" fill="#C62828">チーム</text>
+<text x="340" y="400" text-anchor="middle" font-size="12" fill="#37474F">スクラムチーム（＋AI）</text>
+<text x="340" y="618" text-anchor="middle" font-size="12" fill="#37474F">紫の↻＝Level 3（AI・ガードレール）の更新　①気づく → ②起票 → ③次スプリントで反映・強化</text>
+<text x="340" y="638" text-anchor="middle" font-size="12" fill="#37474F">紫の点線＝洗い出し（レトロ）→ 起票（Issue）→ プロダクトバックログ（PBRでTask/SubTask化）</text>
+</svg>

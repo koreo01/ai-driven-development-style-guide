@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+  <rect width="1200" height="780" fill="#f8fafc"/>
+  
+  <text x="40" y="48" font-size="25" font-weight="bold" fill="#1e293b">垂直スライス × 2トラック制 × AIガードレール</text>
+  <text x="40" y="78" font-size="15" fill="#64748b">各サブタスク内でトラックA（TDD）とトラックB（E2E育成）が並走し、AIが両トラックを支援</text>
+  
+  <!-- 上部: サブタスクの時系列 -->
+  <text x="40" y="120" font-size="13" font-weight="bold" fill="#475569">▼ サブタスク進行（S0 → S1 → S2 → S-final）</text>
+  
+  <!-- S0/S1/S2/Sfの列背景 -->
+  <rect x="150" y="135" width="240" height="540" rx="6" fill="#dbeafe" opacity="0.25"/>
+  <rect x="410" y="135" width="240" height="540" rx="6" fill="#d1fae5" opacity="0.25"/>
+  <rect x="670" y="135" width="240" height="540" rx="6" fill="#fef3c7" opacity="0.25"/>
+  <rect x="930" y="135" width="215" height="540" rx="6" fill="#e9d5ff" opacity="0.25"/>
+  
+  <!-- サブタスクヘッダ -->
+  <g transform="translate(150, 145)">
+    <rect width="240" height="45" rx="6" fill="#1e40af"/>
+    <text x="120" y="20" font-size="14" font-weight="bold" fill="white" text-anchor="middle">S0: スケルトン</text>
+    <text x="120" y="38" font-size="10" fill="#bfdbfe" text-anchor="middle">CI通過の骨格</text>
+  </g>
+  <g transform="translate(410, 145)">
+    <rect width="240" height="45" rx="6" fill="#059669"/>
+    <text x="120" y="20" font-size="14" font-weight="bold" fill="white" text-anchor="middle">S1: ハッピーパス</text>
+    <text x="120" y="38" font-size="10" fill="#d1fae5" text-anchor="middle">一気通貫の正常動作</text>
+  </g>
+  <g transform="translate(670, 145)">
+    <rect width="240" height="45" rx="6" fill="#d97706"/>
+    <text x="120" y="20" font-size="14" font-weight="bold" fill="white" text-anchor="middle">S2: バリエーション</text>
+    <text x="120" y="38" font-size="10" fill="#fef3c7" text-anchor="middle">入力パラメータバリエーション</text>
+  </g>
+  <g transform="translate(930, 145)">
+    <rect width="215" height="45" rx="6" fill="#7c3aed"/>
+    <text x="108" y="20" font-size="14" font-weight="bold" fill="white" text-anchor="middle">S-final（任意）</text>
+    <text x="108" y="38" font-size="10" fill="#ede9fe" text-anchor="middle">リファクタ・安定化</text>
+  </g>
+  
+  <!-- スライス間矢印 -->
+  <path d="M 390 167 L 410 167" stroke="#475569" stroke-width="2" marker-end="url(#a2)"/>
+  <path d="M 650 167 L 670 167" stroke="#475569" stroke-width="2" marker-end="url(#a2)"/>
+  <path d="M 910 167 L 930 167" stroke="#475569" stroke-width="2" marker-end="url(#a2)"/>
+  
+  <!-- トラックA行（TDD） -->
+  <rect x="40" y="210" width="100" height="200" rx="8" fill="#6366f1"/>
+  <text x="90" y="295" font-size="14" font-weight="bold" fill="white" text-anchor="middle">トラックA</text>
+  <text x="90" y="315" font-size="12" fill="#e0e7ff" text-anchor="middle">機能実装</text>
+  <text x="90" y="332" font-size="11" fill="#e0e7ff" text-anchor="middle">(TDD)</text>
+  <text x="90" y="358" font-size="10" fill="#c7d2fe" text-anchor="middle">Red → Green</text>
+  <text x="90" y="372" font-size="10" fill="#c7d2fe" text-anchor="middle">→ Refactor</text>
+  
+  <!-- S0 トラックA -->
+  <g transform="translate(160, 220)">
+    <rect width="220" height="180" rx="6" fill="white" stroke="#6366f1" stroke-width="2"/>
+    <text x="110" y="22" font-size="11" font-weight="bold" fill="#3730a3" text-anchor="middle">作業</text>
+    <text x="110" y="42" font-size="10" fill="#475569" text-anchor="middle">空のクラス/メソッド/APIパス</text>
+    <text x="110" y="57" font-size="10" fill="#475569" text-anchor="middle">最初のUT 1本をfail</text>
+    
+    <line x1="15" y1="72" x2="205" y2="72" stroke="#cbd5e1" stroke-dasharray="3,3"/>
+    
+    <!-- AI支援 -->
+    <rect x="10" y="82" width="200" height="88" rx="4" fill="#fef9c3" stroke="#eab308" stroke-width="1"/>
+    <text x="110" y="100" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">🛡 AI支援</text>
+    <text x="110" y="118" font-size="9" fill="#713f12" text-anchor="middle">・/s0-skeleton で雛形生成</text>
+    <text x="110" y="133" font-size="9" fill="#713f12" text-anchor="middle">・CLAUDE.mdから命名規約適用</text>
+    <text x="110" y="148" font-size="9" fill="#713f12" text-anchor="middle">・DoDチェック（CI通るか）</text>
+    <text x="110" y="163" font-size="9" fill="#713f12" text-anchor="middle">・fail UTの初期雛形を提示</text>
+  </g>
+  
+  <!-- S1 トラックA -->
+  <g transform="translate(420, 220)">
+    <rect width="220" height="180" rx="6" fill="white" stroke="#059669" stroke-width="2"/>
+    <text x="110" y="22" font-size="11" font-weight="bold" fill="#065f46" text-anchor="middle">作業</text>
+    <text x="110" y="42" font-size="10" fill="#475569" text-anchor="middle">ハッピーパスのUT群を</text>
+    <text x="110" y="57" font-size="10" fill="#475569" text-anchor="middle">Red→Green→Refactor複数回</text>
+    
+    <line x1="15" y1="72" x2="205" y2="72" stroke="#cbd5e1" stroke-dasharray="3,3"/>
+    
+    <rect x="10" y="82" width="200" height="88" rx="4" fill="#fef9c3" stroke="#eab308" stroke-width="1"/>
+    <text x="110" y="100" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">🛡 AI支援</text>
+    <text x="110" y="118" font-size="9" fill="#713f12" text-anchor="middle">・tdd-pair Subagentが</text>
+    <text x="110" y="133" font-size="9" fill="#713f12" text-anchor="middle">  次のRed候補を提案</text>
+    <text x="110" y="148" font-size="9" fill="#713f12" text-anchor="middle">・Refactor時の重複検知</text>
+    <text x="110" y="163" font-size="9" fill="#713f12" text-anchor="middle">・Red飛ばしを Hook で警告</text>
+  </g>
+  
+  <!-- S2 トラックA -->
+  <g transform="translate(680, 220)">
+    <rect width="220" height="180" rx="6" fill="white" stroke="#d97706" stroke-width="2"/>
+    <text x="110" y="22" font-size="11" font-weight="bold" fill="#78350f" text-anchor="middle">作業</text>
+    <text x="110" y="42" font-size="10" fill="#475569" text-anchor="middle">大文字小文字混在 email・</text>
+    <text x="110" y="57" font-size="10" fill="#475569" text-anchor="middle">Remember-me 有無などのUT</text>
+    
+    <line x1="15" y1="72" x2="205" y2="72" stroke="#cbd5e1" stroke-dasharray="3,3"/>
+    
+    <rect x="10" y="82" width="200" height="88" rx="4" fill="#fef9c3" stroke="#eab308" stroke-width="1"/>
+    <text x="110" y="100" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">🛡 AI支援</text>
+    <text x="110" y="118" font-size="9" fill="#713f12" text-anchor="middle">・境界値・入力バリエーションを列挙</text>
+    <text x="110" y="133" font-size="9" fill="#713f12" text-anchor="middle">・tdd-pair が変則入力パターンを提案</text>
+    <text x="110" y="148" font-size="9" fill="#713f12" text-anchor="middle">・MCP経由で過去の入力欠落ケース</text>
+    <text x="110" y="163" font-size="9" fill="#713f12" text-anchor="middle">  を参照し網羅性向上</text>
+  </g>
+  
+  <!-- S-final トラックA -->
+  <g transform="translate(940, 220)">
+    <rect width="195" height="180" rx="6" fill="white" stroke="#7c3aed" stroke-width="2"/>
+    <text x="97" y="22" font-size="11" font-weight="bold" fill="#5b21b6" text-anchor="middle">作業</text>
+    <text x="97" y="42" font-size="10" fill="#475569" text-anchor="middle">重複・命名のブレを</text>
+    <text x="97" y="57" font-size="10" fill="#475569" text-anchor="middle">整える（UTはGreen維持）</text>
+    
+    <line x1="15" y1="72" x2="180" y2="72" stroke="#cbd5e1" stroke-dasharray="3,3"/>
+    
+    <rect x="10" y="82" width="175" height="88" rx="4" fill="#fef9c3" stroke="#eab308" stroke-width="1"/>
+    <text x="97" y="100" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">🛡 AI支援</text>
+    <text x="97" y="118" font-size="9" fill="#713f12" text-anchor="middle">・code-reviewer が</text>
+    <text x="97" y="133" font-size="9" fill="#713f12" text-anchor="middle">  命名・構造を一括提案</text>
+    <text x="97" y="148" font-size="9" fill="#713f12" text-anchor="middle">・回帰テスト自動実行</text>
+  </g>
+  
+  <!-- トラックB行（E2E） -->
+  <rect x="40" y="440" width="100" height="215" rx="8" fill="#059669"/>
+  <text x="90" y="520" font-size="14" font-weight="bold" fill="white" text-anchor="middle">トラックB</text>
+  <text x="90" y="540" font-size="12" fill="#d1fae5" text-anchor="middle">受け入れテスト</text>
+  <text x="90" y="557" font-size="11" fill="#d1fae5" text-anchor="middle">(E2E成長)</text>
+  <text x="90" y="583" font-size="10" fill="#a7f3d0" text-anchor="middle">L0 → L1 → L2</text>
+  <text x="90" y="597" font-size="10" fill="#a7f3d0" text-anchor="middle">→ L3 → L4 → L5</text>
+  
+  <!-- S0 トラックB -->
+  <g transform="translate(160, 450)">
+    <rect width="220" height="195" rx="6" fill="white" stroke="#6366f1" stroke-width="2"/>
+    <text x="110" y="22" font-size="11" font-weight="bold" fill="#3730a3" text-anchor="middle">作業</text>
+    <text x="110" y="42" font-size="10" fill="#475569" text-anchor="middle">GherkinをSystem Specの</text>
+    <text x="110" y="57" font-size="10" fill="#475569" text-anchor="middle">ラッパーに転写（pending/skip）</text>
+    <rect x="50" y="68" width="120" height="22" rx="4" fill="#1e40af"/>
+    <text x="110" y="84" font-size="11" font-weight="bold" fill="white" text-anchor="middle">L1 到達</text>
+    
+    <line x1="15" y1="100" x2="205" y2="100" stroke="#cbd5e1" stroke-dasharray="3,3"/>
+    
+    <rect x="10" y="110" width="200" height="78" rx="4" fill="#fef9c3" stroke="#eab308" stroke-width="1"/>
+    <text x="110" y="128" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">🛡 AI支援</text>
+    <text x="110" y="146" font-size="9" fill="#713f12" text-anchor="middle">・e2e-grower がGherkin→</text>
+    <text x="110" y="160" font-size="9" fill="#713f12" text-anchor="middle">  pendingスケルトン一括生成</text>
+    <text x="110" y="175" font-size="9" fill="#713f12" text-anchor="middle">・pending状態のCI認識を確認</text>
+  </g>
+  
+  <!-- S1 トラックB -->
+  <g transform="translate(420, 450)">
+    <rect width="220" height="195" rx="6" fill="white" stroke="#059669" stroke-width="2"/>
+    <text x="110" y="22" font-size="11" font-weight="bold" fill="#065f46" text-anchor="middle">作業</text>
+    <text x="110" y="42" font-size="10" fill="#475569" text-anchor="middle">Selector本実装・Fixture整備</text>
+    <text x="110" y="57" font-size="10" fill="#475569" text-anchor="middle">ハッピーパスを1本Green</text>
+    <rect x="50" y="68" width="120" height="22" rx="4" fill="#059669"/>
+    <text x="110" y="84" font-size="11" font-weight="bold" fill="white" text-anchor="middle">L2 → L3 到達</text>
+    
+    <line x1="15" y1="100" x2="205" y2="100" stroke="#cbd5e1" stroke-dasharray="3,3"/>
+    
+    <rect x="10" y="110" width="200" height="78" rx="4" fill="#fef9c3" stroke="#eab308" stroke-width="1"/>
+    <text x="110" y="128" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">🛡 AI支援</text>
+    <text x="110" y="146" font-size="9" fill="#713f12" text-anchor="middle">・Selectorの妥当性を検証</text>
+    <text x="110" y="160" font-size="9" fill="#713f12" text-anchor="middle">・Fixture雛形を生成</text>
+    <text x="110" y="175" font-size="9" fill="#713f12" text-anchor="middle">・flaky初期兆候の警告</text>
+  </g>
+  
+  <!-- S2 トラックB -->
+  <g transform="translate(680, 450)">
+    <rect width="220" height="195" rx="6" fill="white" stroke="#d97706" stroke-width="2"/>
+    <text x="110" y="22" font-size="11" font-weight="bold" fill="#78350f" text-anchor="middle">作業</text>
+    <text x="110" y="42" font-size="10" fill="#475569" text-anchor="middle">入力バリエーションを順次Green化</text>
+    <text x="110" y="57" font-size="10" fill="#475569" text-anchor="middle">（pending/skipを外す）</text>
+    <rect x="50" y="68" width="120" height="22" rx="4" fill="#d97706"/>
+    <text x="110" y="84" font-size="11" font-weight="bold" fill="white" text-anchor="middle">L4 追加</text>
+    
+    <line x1="15" y1="100" x2="205" y2="100" stroke="#cbd5e1" stroke-dasharray="3,3"/>
+    
+    <rect x="10" y="110" width="200" height="78" rx="4" fill="#fef9c3" stroke="#eab308" stroke-width="1"/>
+    <text x="110" y="128" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">🛡 AI支援</text>
+    <text x="110" y="146" font-size="9" fill="#713f12" text-anchor="middle">・未カバーのGherkin行を指摘</text>
+    <text x="110" y="160" font-size="9" fill="#713f12" text-anchor="middle">・Hook: 入力バリエーション未追加でpush禁止</text>
+    <text x="110" y="175" font-size="9" fill="#713f12" text-anchor="middle">・MCPで過去の欠落ケース照合</text>
+  </g>
+  
+  <!-- S-final トラックB -->
+  <g transform="translate(940, 450)">
+    <rect width="195" height="195" rx="6" fill="white" stroke="#7c3aed" stroke-width="2"/>
+    <text x="97" y="22" font-size="11" font-weight="bold" fill="#5b21b6" text-anchor="middle">作業</text>
+    <text x="97" y="42" font-size="10" fill="#475569" text-anchor="middle">Page Object化・flaky対策</text>
+    <rect x="40" y="55" width="115" height="22" rx="4" fill="#7c3aed"/>
+    <text x="97" y="71" font-size="11" font-weight="bold" fill="white" text-anchor="middle">L5 到達</text>
+    
+    <line x1="15" y1="90" x2="180" y2="90" stroke="#cbd5e1" stroke-dasharray="3,3"/>
+    
+    <rect x="10" y="100" width="175" height="88" rx="4" fill="#fef9c3" stroke="#eab308" stroke-width="1"/>
+    <text x="97" y="118" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">🛡 AI支援</text>
+    <text x="97" y="136" font-size="9" fill="#713f12" text-anchor="middle">・Page Object抽出</text>
+    <text x="97" y="150" font-size="9" fill="#713f12" text-anchor="middle">・flaky検知と再実行戦略</text>
+    <text x="97" y="164" font-size="9" fill="#713f12" text-anchor="middle">・CI安定度のスコアリング</text>
+  </g>
+  
+  <!-- 下部まとめ -->
+  <rect x="40" y="695" width="1120" height="70" rx="6" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="600" y="722" font-size="15" font-weight="bold" fill="#3730a3" text-anchor="middle">サブタスクは工程ではなく垂直スライス。2トラックを並走させ、AIが両方を補佐する</text>
+  <text x="600" y="744" font-size="12" fill="#475569" text-anchor="middle">トラックA=TDDサイクル、トラックB=E2E成長レベル（L0→L5）、どちらもCLAUDE.mdの規約に従う</text>
+  <text x="600" y="760" font-size="11" fill="#64748b" text-anchor="middle">※ サブタスク名にRED/GREEN/REFACTORを含めない（工程分割の誘発を防ぐ）</text>
+  
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+</svg>

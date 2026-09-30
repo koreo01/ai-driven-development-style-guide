@@ -1,0 +1,66 @@
+<svg width="100%" viewBox="0 0 680 560" role="img" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+<title>実装サイクル Ⓐ〜Ⓔ（Level 1）</title>
+<desc>意図記述・コード生成・即時検証・DoD＆AC確認・レビューの5段を1サブタスク内で回し、不合格時はコード生成に戻るループ。承認必須ゲートと自動ガードレールを区別する。</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+<style>
+svg { color:#3d3d3a; }
+@media (prefers-color-scheme: dark){ svg { color:#c9c7be; } }
+.th { font-size:14px; font-weight:500; }
+.ts { font-size:12px; font-weight:400; opacity:0.85; }
+.arr { stroke: currentColor; stroke-width:1.5; fill:none; }
+.box-teal { fill:#e1f5ee; stroke:#0f6e56; }
+.box-red  { fill:#fcebeb; stroke:#a32d2d; }
+.tx-teal{fill:#04342c;} .tx-red{fill:#501313;}
+.sub-teal{fill:#0f6e56;} .sub-red{fill:#791f1f;}
+.note{ fill:#5f5e5a; }
+.leg-red{ fill:#fcebeb; stroke:#a32d2d; }
+@media (prefers-color-scheme: dark){
+.box-teal{fill:#04342c;stroke:#5dcaa5;} .box-red{fill:#501313;stroke:#f09595;}
+.tx-teal,.tx-red{fill:#f1efe8;}
+.sub-teal{fill:#9fe1cb;} .sub-red{fill:#f7c1c1;}
+.note{fill:#b4b2a9;} .leg-red{fill:#501313;stroke:#f09595;}
+}
+</style>
+</defs>
+
+<rect x="40" y="36" width="14" height="14" rx="3" stroke-width="0.5" class="leg-red"/>
+<text class="ts note" x="60" y="48">承認必須ゲート（人間の採否判断）</text>
+<text class="ts note" x="300" y="48">［自動GR］＝ 自動ガードレール（承認不要で作動）</text>
+
+<rect x="210" y="72" width="260" height="52" rx="8" stroke-width="0.5" class="box-teal"/>
+<text class="th tx-teal" x="340" y="92" text-anchor="middle" dominant-baseline="central">Ⓐ 意図記述</text>
+<text class="ts sub-teal" x="340" y="110" text-anchor="middle" dominant-baseline="central">何を実装するかを先に言葉にする</text>
+<line x1="340" y1="124" x2="340" y2="150" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="210" y="150" width="260" height="52" rx="8" stroke-width="0.5" class="box-teal"/>
+<text class="th tx-teal" x="340" y="170" text-anchor="middle" dominant-baseline="central">Ⓑ コード生成</text>
+<text class="ts sub-teal" x="340" y="188" text-anchor="middle" dominant-baseline="central">テスト → 最小実装(Red-Green)</text>
+<line x1="340" y1="202" x2="340" y2="228" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="210" y="228" width="260" height="52" rx="8" stroke-width="0.5" class="box-teal"/>
+<text class="th tx-teal" x="340" y="248" text-anchor="middle" dominant-baseline="central">Ⓒ 即時検証 ［自動GR］</text>
+<text class="ts sub-teal" x="340" y="266" text-anchor="middle" dominant-baseline="central">テスト実行・TDDアンチパターン検出</text>
+<line x1="340" y1="280" x2="340" y2="306" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="210" y="306" width="260" height="52" rx="8" stroke-width="0.5" class="box-teal"/>
+<text class="th tx-teal" x="340" y="326" text-anchor="middle" dominant-baseline="central">Ⓓ DoD＆AC 確認</text>
+<text class="ts sub-teal" x="340" y="344" text-anchor="middle" dominant-baseline="central">完了基準・受け入れ条件を満たすか</text>
+<line x1="340" y1="358" x2="340" y2="384" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="210" y="384" width="260" height="52" rx="8" stroke-width="0.5" class="box-teal"/>
+<text class="th tx-teal" x="340" y="404" text-anchor="middle" dominant-baseline="central">Ⓔ レビュー</text>
+<text class="ts sub-teal" x="340" y="422" text-anchor="middle" dominant-baseline="central">差分を確認し合否を判断</text>
+
+<text class="ts note" x="130" y="300">不合格なら Ⓑ へ戻る</text>
+<path d="M210 410 L120 410 L120 176 L210 176" fill="none" class="arr" marker-end="url(#arrow)" stroke="#ba7517" stroke-dasharray="5 4"/>
+
+<line x1="340" y1="436" x2="340" y2="470" class="arr" marker-end="url(#arrow)"/>
+<text class="ts note" x="360" y="456" text-anchor="start">合格</text>
+
+<rect x="210" y="470" width="260" height="52" rx="8" stroke-width="0.5" class="box-red"/>
+<text class="th tx-red" x="340" y="490" text-anchor="middle" dominant-baseline="central">コミット（承認必須ゲート）</text>
+<text class="ts sub-red" x="340" y="508" text-anchor="middle" dominant-baseline="central">サイクルを抜けてセッション終了へ</text>
+</svg>
