@@ -269,23 +269,45 @@ StoryとTaskは「ユーザー向け / 内部向け」という区別だけで�
 
 ### Bugのチケット分岐
 
-> この節は現時点ではスタブです。詳細は Issue #4 を参照してください。
+Bugは「仕様と実装のどちらがズレているか」によって、親チケットがStoryになるかTaskになるかが分かれます。
+
+| ケース | WHY | 親チケット（WHAT） | HOW |
+| --- | --- | --- | --- |
+| 仕様自体が誤っている | 期待・要求と異なる挙動になっている | Story（正しい仕様を再定義する） | SubTask |
+| 仕様は正しいが設計・実装が誤っている | 正しい仕様を満たしていない | Task（設計・実装を修正する） | SubTask |
+
+- **仕様自体が誤っている場合**: 「正しい仕様は何か」を再定義する必要があり、これはRequirement Specificationの変更にあたるため、親チケットはStoryになります。
+- **仕様は正しいが設計・実装が誤っている場合**: 仕様自体は変更せず、設計・実装のみを修正するため、親チケットはTaskになります。
+
+いずれのケースも、具体的な修正方法はSubTask（HOW）へ分離します。この分岐も、前節で説明した「Requirement Specificationを変更するか否か」という判断基準にそのまま従います。
 
 ---
 
 ## 6. 段階的な文脈の精緻化 — Progressive Context Refinement
 
-本章は、PLAN.md が定義する原則「Progressive Context Refinement」を本書に明文化するための章です。本文は Issue #4（本リポジトリのTask）で執筆予定です。
+### WhyとWhatを保持したままHowを渡す
 
-> この章は現時点ではスタブです。詳細は Issue #4 を参照してください。
+Why → What → Howのチケット階層は、チケット管理上の都合だけでなく、AIに渡すDevelopment Contextを段階的に具体化するための仕組みでもあります。AIが現在のSubTask（How）だけを見て作業すると、何のためにその変更をするのか（Why）・何を満たせば完了なのか（What）という文脈が失われ、本来の課題からズレた実装が生まれます。
+
+```text
+Business / User Context → Issue（WHY） → Story/Task（WHAT） → SubTask（HOW） → Repository Context → Implementation
+```
+
+AIには現在のSubTaskの内容だけでなく、その上位のWhatとWhyを常にContextとして保持させます。これを **Progressive Context Refinement** と呼び、本書の中核原則の一つとします。
 
 ---
 
 ## 7. 追跡可能性 — Traceability
 
-本章は、PLAN.md が定義する原則「Traceability」を本書に明文化するための章です。本文は Issue #4（本リポジトリのTask）で執筆予定です。
+### なぜこのコードが存在するのかを遡れる状態を保つ
 
-> この章は現時点ではスタブです。詳細は Issue #4 を参照してください。
+AIによる変更について、「なぜこのコードが存在するのか」をIssueまで遡れる状態を維持します。Ticket Management（Issue / Story・Task / SubTask）とGit Workflow（Branch / Commit / PR / CI）を別々の仕組みとして扱わず、一つの **Traceability Chain** として説明します。
+
+```text
+Issue（WHY） → Story/Task（WHAT） → SubTask（HOW） → Branch → Code / Test → Commit → PR/MR → CI → Running Software
+```
+
+このChainのどの地点からでも、上流（なぜそれを作るのか）・下流（どう動いているのか）の両方へ追跡できることが、AI駆動開発における説明責任（Accountability）の基盤になります。
 
 ---
 
