@@ -894,6 +894,8 @@ GitHub Flow を Reference Workflow として採用するのは、GitHub とい�
 
 ## 10. Claude Code リファレンス実装 — Claude Code Reference Implementation
 
+本章で示す Claude Code の Subagent・Slash Command（`.claude/commands/`）・Skill（`.claude/skills/`）・Hooks・MCP構成は、第3章〜第9章・第13章が定める原則（Traceability・Progressive Context Refinement・Executable Quality Gates など）とスクラムイベントの運営を、Claude Code 上でどう動かすかを示す Reference Implementation です。これらは Claude Code という特定ツールを必須化するものではなく、本書の Source of Truth でもありません。本書の Source of Truth は第3章〜第9章・第13章が定める原則であり、Claude Code のコマンド・Skill群はその原則を具体化する一実装（How）です。他のAIコーディングツールやエージェント基盤を採用する場合の読み替え方は第11章（Project Adaptation）を参照してください。
+
 ### AIガードレールの設計と継続的アップデート ― 人間の責務②
 
 第13章「AI協働の成熟度モデル」の「AIが性能を発揮できる環境を整える」では、AIが性能を発揮できる環境を整える責務を扱いました。本節はその延長として、環境の一部であるAIガードレール（CLAUDE.md／Subagent／Slash Command／Hooks／MCP／Git pre-commit）を、どう設計し、どう運用し、どう改廃していくかを扱います。
