@@ -230,11 +230,46 @@ Level 3の更新は、機能開発とは別枠の活動ではありません。�
 
 ---
 
-## 5. Why → What → How — Why → What → How
+## 5. Why・What・Howとチケット階層の対応 — Why → What → How
 
-本章は、PLAN.md が定義する原則「Why → What → How」を本書に明文化するための章です。本文は Issue #4（本リポジトリのTask）で執筆予定です。
+### 3段階モデル
 
-> この章は現時点ではスタブです。詳細は Issue #4 を参照してください。
+AIにいきなり実装（How）を渡すと、何のためにそれを作るのかという文脈（Why）が失われ、本来の課題とズレた実装が生まれがちです。本書ではDevelopment Contextを3段階に分離し、AIに渡す情報を段階的に具体化します。
+
+```text
+WHY（なぜ変更が必要なのか）→ WHAT（何を満たせば解決したと言えるのか）→ HOW（どう実現するのか）
+```
+
+WhyとWhatを保持したままHowへ具体化すること。これが本章の核心です。
+
+### チケット階層へのMapping
+
+この3段階は、チケット階層にそのままMappingされます。機能開発（Issue起点）と技術対応（Tech Issue起点）の2パターンがあります。
+
+| 段階 | 機能開発（Issue起点） | 技術対応（Tech Issue起点） |
+| --- | --- | --- |
+| WHY（なぜ必要か） | Issue（課題・価値） | Tech Issue |
+| WHAT（何を満たすか） | Story | Task |
+| HOW（どう実現するか） | SubTask | SubTask |
+
+機能開発では「課題（Issue）→ 要求仕様を定義するStory → 具体的な実現手段であるSubTask」という流れを取ります。技術対応では、Requirement Specification（要求仕様）自体は変えずに技術的な変更を行うため、Storyの代わりにTaskを使います。
+
+### StoryとTaskの違い
+
+StoryとTaskは「ユーザー向け / 内部向け」という区別だけでは分類しません。判断基準は、
+
+> **Requirement Specificationを定義・変更する必要があるか**
+
+です。
+
+- **Story**: Requirement Specificationを新たに定義または変更する（WHY → Story → WHAT）
+- **Task**: Requirement Specificationは変更せず、技術・設計・実装等の変更を行う（WHY → Task → WHAT）
+
+どちらも、具体的な実現方法はSubTask（HOW）へ分離します。本書の他の章で `Type: Story` / `Type: Task` / `Type: SubTask` と表記しているのは、この区分に対応しています。
+
+### Bugのチケット分岐
+
+> この節は現時点ではスタブです。詳細は Issue #4 を参照してください。
 
 ---
 
