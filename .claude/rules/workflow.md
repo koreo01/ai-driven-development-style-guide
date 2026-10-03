@@ -8,6 +8,28 @@ CLAUDE.mdの原則に対応する具体的な手順書。
 
 ---
 
+## Conceptual Workflow（概念モデル）
+
+以下の①〜⑧は、ツール非依存のConceptual WorkflowをGitHub Flow + Claude Code CLIで実装したReference Implementationである（README §9「なぜGitHub Flowか」・§10「Claude Code リファレンス実装」参照）。
+
+```text
+Issue（WHY） → Story/Task（WHAT） → SubTask（HOW） → Implementation → Validation → Review → Integration
+```
+
+| 概念ステップ | 説明（README参照） | 本書での実装 |
+| --- | --- | --- |
+| Issue（WHY） | 課題・要求を定義する（§4） | ①②（チケット確認） |
+| Story/Task（WHAT） | 何を作るかを定義する（§5） | ②④（ブランチ作成） |
+| SubTask（HOW） | 具体的な作業単位（§5） | ⑤（実装・編集） |
+| Implementation | 実装・編集 | ⑤ |
+| Validation | 動作確認・品質ゲート | ⑥（コミット前確認）・Pre-push Hook |
+| Review | レビュー・承認 | ⑥-1（ユーザー承認）・PR |
+| Integration | mainへの統合（§7 Traceability Chain） | ⑦⑧（push / PR / マージ） |
+
+他ツール（GitLab等）へ読み替える場合は、この概念モデルを保ったまま①〜⑧の実装のみ差し替える（README §11「Project Adaptation」参照）。
+
+---
+
 ## ① セッション起動・状態確認（`/dev:start-session` 一括実行）
 
 新セッション開始時、または `/compact` 後の復帰時に `/dev:start-session` を実行する。本コマンドが以下を承認なしで一括実行する（詳細は `.claude/commands/dev/start-session.md` 参照）。
