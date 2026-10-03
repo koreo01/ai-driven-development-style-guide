@@ -55,9 +55,13 @@
 チケットの種別は `type:*` ラベルで識別する（`.claude/config/ticket-system.json` の `fieldMapping.type` 参照）。
 
 > ℹ️ 他組織で本ガイドを流用する際は `.claude/config/ticket-system.json` の値（`ticketId.prefix` / `pattern` / `example` 等）を自組織のチケット管理システムの ID 表記に書き換える。本文中の `#xxx` 表記もそれに合わせて読み替える。
+> ℹ️ 各Typeの詳細な役割・起票者・リファインメントの流れは `.claude/commands/pbi/guide-ticket-model.md`（チケットモデル Guide）を参照する。
 
 | Type（ラベル） | 説明 |
 | --- | --- |
+| `type:backbone`（任意） | Narrative Flowをさらに束ねる、プロダクト全体の骨格となる抽象化層 |
+| `type:narrative-flow`（任意） | 複数のStoryを機能単位で束ねる抽象化層 |
+| `type:requirement` | Issue（Tech/Needs/Bug）の事実・背景から「何を解決すべきか」を記載する要件チケット |
 | `type:story` | 機能開発チケット。「〇〇は△△できる」形式 |
 | `type:task` | 保守作業チケット。CI改良・リファクタ・ドキュメントなど |
 | `type:subtask` | Story/Taskの作業単位。**必ず `type:subtask` ラベルを設定すること** |
@@ -72,10 +76,24 @@
 ### チケットの親子構造
 
 ```text
-Issue (Tech/Bug/Needs/Request)  ← 「何が問題か」
-  └─ 子チケット: Task            ← 「何をするか」（ブランチはこのチケット単位）
-       └─ 子チケット: SubTask    ← 「具体的な作業単位」（コミットはこのチケット単位）
+Issue (Tech/Needs/Bug)            ← 「何が困っているか」（Why）
+  └─ 子チケット: Requirement      ← 「何を解決すべきか」（What）
+       ├─ 子チケット: Story       ← 顧客体験としての受け入れ条件（ブランチはこのチケット単位）
+       │    └─ 子チケット: SubTask  ← 「具体的な作業単位」（コミットはこのチケット単位）
+       │    （任意: 複数StoryをNarrative Flowで束ね、
+       │     複数Narrative FlowをさらにBackboneで束ねられる）
+       └─ 子チケット: Task        ← 仕様変更を伴わない作業（ブランチはこのチケット単位）
+            └─ 子チケット: SubTask  ← 「具体的な作業単位」（コミットはこのチケット単位）
+
+Issue (Request)                   ← Requirementを経由せず直接Task化する
+  └─ 子チケット: Task
+       └─ 子チケット: SubTask
 ```
+
+Tech/Needs/Bug の Issue を機能として解決する（Story化する）か、仕様変更を伴わない
+作業として解決する（Task化する）かにより、Requirementの後続が分岐する。Request は
+Requirementを経由せず直接Task化する。Requirement・Narrative Flow・Backboneの詳細は
+`.claude/commands/pbi/guide-ticket-model.md` を参照する。
 
 #### 親子関係の設定ルール
 
@@ -83,12 +101,14 @@ GitHub Issues にはリレーションフィールドが無いため、`.claude/
 
 | チケット | 記載場所 | 設定する値 |
 | --- | --- | --- |
-| Issue | 本文のタスクリスト | 対応する Task の `- [ ] #xxx`（複数可） |
-| Task | 本文冒頭 | 対応する Issue の `Parent: #xxx` |
+| Issue | 本文のタスクリスト | 対応する Requirement または Task の `- [ ] #xxx`（複数可） |
+| Requirement | 本文冒頭 | 対応する Issue の `Parent: #xxx` |
+| Requirement | 本文のタスクリスト | 対応する Story または Task の `- [ ] #xxx`（複数可） |
+| Task | 本文冒頭 | 対応する Issue（Requestの場合）または Requirement（Tech/Needs/Bugの場合）の `Parent: #xxx` |
 | Task | 本文のタスクリスト | 対応する SubTask の `- [ ] #xxx`（複数可） |
 | SubTask | 本文冒頭 | 対応する Task の `Parent: #xxx` |
 
-- 起票の順序：**Issue → Task → SubTask**（`gh issue create` で作成し、`gh issue edit --add-label` でラベル付与）
+- 起票の順序：**Issue → (Requirement →) Story/Task → SubTask**（`gh issue create` で作成し、`gh issue edit --add-label` でラベル付与）
 
 ---
 
