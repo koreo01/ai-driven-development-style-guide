@@ -15,6 +15,8 @@
 
 ## チケット作業の完了チェックリスト
 
+> 原則: 本チェックリストはREADME §7「追跡可能性 — Traceability」が定義するTraceability Chain（Issue→Story/Task→SubTask→Branch→Code/Test→Commit→PR/MR→CI→Running Software）を、Claude Codeで実行するReference Implementationである（README §10「Claude Code リファレンス実装」参照）。
+
 毎 SubTask（#xxx）のコミット完了後、`/dev:end-session` を実行する。
 `/dev:end-session` は以下を承認なしで一括実行する（詳細は `.claude/commands/dev/end-session.md` 参照）:
 
@@ -40,6 +42,8 @@
 ---
 
 ## GitHub Issue のルール
+
+> 原則: 本節のIssue→Task→SubTask体系は、README §4「まずはIssueから始めよ — Start with Why」・§5「Why・What・Howとチケット階層の対応」が定義するWhy→What→Howの3段階モデルを、GitHub IssuesでReference Implementationしたものである。
 
 ### 連携方式
 
@@ -90,6 +94,8 @@ GitHub Issues にはリレーションフィールドが無いため、`.claude/
 
 ## ブランチ名フォーマット
 
+> 原則: ブランチ運用はREADME §9「なぜGitHub Flowか — Why GitHub Flow?」のPrincipleをGitHub Flowで実装したReference Implementationである。他VCS/ブランチ戦略を採用する場合はREADME §11「Project Adaptation」に従い本節を書き換える。
+>
 > ⚠️ **ブランチ作成前に必ず `.claude/rules/branch-checklist.md` の手順を実行すること。**
 > ℹ️ フォーマットの実値は `.claude/config/ticket-system.json` の `branchNaming.formats` で定義する。他組織で流用する際は同 Config を書き換える。
 
@@ -115,6 +121,8 @@ chore/200_update-branch-strategy
 
 ## コミットメッセージ
 
+> 原則: コミットメッセージへの`#xxx`埋め込みは、README §7「追跡可能性 — Traceability」のTraceability Chainを、コミット単位で実現するための記法である。
+>
 > ℹ️ フォーマットの実値・検査用正規表現は `.claude/config/ticket-system.json` の `commitMessage.formats` / `commitMessage.pattern` で定義する。Pre-ToolUse フック（`.claude/hooks/pre-bash-bi-xxx-check.sh`）も同 Config を参照する。他組織で流用する際は同 Config を書き換える。
 
 コミットはSubTask（`type:subtask` の `#xxx`）完了単位が最大粒度。
@@ -173,6 +181,8 @@ OK 例（subject + body）:
 
 ## /compact 運用ルール
 
+> 原則: 本節はREADME §10「Claude Code リファレンス実装」が定義する、Claude Code固有のコンテキスト管理（README §6「段階的な文脈の精緻化 — Progressive Context Refinement」参照）のReference Implementationである。
+
 ### /compact の案内タイミング
 
 `/dev:end-session` の完了レポート（Step 9）末尾で Claude が `/compact` の実行を案内する。
@@ -189,6 +199,8 @@ OK 例（subject + body）:
 ---
 
 ## ファイル管理ルール
+
+> 原則: `.claude/` 配下の構成はREADME §10「Claude Code リファレンス実装」のReference Implementationである。チーム共有資産と個人資産の分離は、README §7「追跡可能性 — Traceability」が前提とする「チームが共有する判断根拠と、個人のセッション状態を混在させない」という考え方に基づく。
 
 ### `.claude/` ディレクトリ構成
 
