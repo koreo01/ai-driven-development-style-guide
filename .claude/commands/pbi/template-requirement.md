@@ -50,10 +50,9 @@ Story       ←── 受け入れ条件（Gherkin形式）
 <!-- NG例: 「予約変更を改善する」（作業形式） / 「予約変更をWeb完結したい」（願望形式） -->
 [対象]のために[解決の方向性]できる
 
-## 元Issue
-<!-- 必須: 派生元Issue（Tech / Needs / Bug のいずれか）の#xxxを記載 -->
+Parent: [#xxx]
+<!-- 必須: 派生元Issue（Tech / Needs / Bug のいずれか）の#xxxを本文冒頭に記載 -->
 <!-- NG: Request（RequestはTask直行ルートであり、Requirementを経由しない） -->
-【元Issue】[#xxx（Tech / Needs / Bug）]
 
 ## 解決内容
 <!-- 必須: 元Issueの事実・背景から何を解くべきかの解釈と、その対応策（傘） -->
@@ -97,9 +96,9 @@ Story       ←── 受け入れ条件（Gherkin形式）
 | チェック項目 | テンプレートの対応箇所 |
 |------------|----------------------|
 | 0-1 Status有効値 | プロパティ設定ガイド参照 |
-| 0-3 元Issue種別の確認 | `## 元Issue` セクション（Tech/Needs/Bugのいずれか） |
+| 0-3 元Issue種別の確認 | 本文冒頭の `Parent: #xxx`（Tech/Needs/Bugのいずれか） |
 | 1 Title形式 | 1行目（「〇〇のために△△できる」等） |
-| 2 元Issueリンク | `## 元Issue` セクション |
+| 2 元Issueリンク | 本文冒頭の `Parent: #xxx` |
 | 3 解決内容の存在 | `## 解決内容` セクション |
 | 6 別解釈の言及 | `## 別解釈の可能性` セクション |
 | 7 Story/Task分解可能性 | `## Story/Task分解の見込み` セクション |
@@ -111,7 +110,7 @@ Story       ←── 受け入れ条件（Gherkin形式）
 | ミスのパターン | 正しい書き方 |
 |-------------|------------|
 | Title: 「予約変更を改善する」 | 「予約変更はWeb画面から完結できるようにする」（解決の方向性を明示） |
-| 元Issueリンクなし | 「【元Issue】#xxx」を必ず記載 |
+| 元Issueリンクなし | 本文冒頭に `Parent: #xxx` を必ず記載 |
 | 元IssueがRequest | RequestはRequirementを経由しない。Task直行ルートを使う（`check-request.md` 参照） |
 | 解決内容: 「もっと使いやすくする」 | 具体的な対応策（「Web画面から〜できるようにする」等）を記載 |
 | Howまで記載（「PUT /reservations/{id} を実装する」） | HowはStory/SubTaskに委ねる。Requirementは「何を解決するか」まで |

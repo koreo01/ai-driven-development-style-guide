@@ -53,9 +53,8 @@ Given/When/Then の各節はすべてユーザー視点で記述し、実装詳�
 <!-- NG例: 「予約変更機能を実装する」（実装形式） / 「予約を変更したい」（願望形式） -->
 [ユーザー]は[操作・機能]できる
 
-## 元Requirement
-<!-- 必須: 派生元Requirementの#xxxを記載 -->
-【元Requirement】[#xxx または URL]
+Parent: [#xxx]
+<!-- 必須: 派生元Requirementの#xxxを本文冒頭に記載 -->
 
 ## 受け入れ条件
 
@@ -132,7 +131,7 @@ Refinement が不十分なまま Story を起票すると、SubTask 分解と受
 | 0-2 Workflow State有効値 | プロパティ設定ガイド参照 |
 | 0-3 Planned Release Version | プロパティ設定ガイド参照 |
 | 1 Title形式 | 1行目（「〇〇は△△できる」） |
-| 2 元Requirementリンク | `## 元Requirement` セクション |
+| 2 元Requirementリンク | 本文冒頭の `Parent: #xxx` |
 | 3 受け入れ条件の存在 | `## 受け入れ条件` セクション |
 | 4-6 Given/When/Then | シナリオの各節 |
 | 7 正常系シナリオ | シナリオ1 |
