@@ -230,27 +230,84 @@ Level 3の更新は、機能開発とは別枠の活動ではありません。�
 
 ---
 
-## 5. Why → What → How — Why → What → How
+## 5. Why・What・Howとチケット階層の対応 — Why → What → How
 
-本章は、PLAN.md が定義する原則「Why → What → How」を本書に明文化するための章です。本文は Issue #4（本リポジトリのTask）で執筆予定です。
+### 3段階モデル
 
-> この章は現時点ではスタブです。詳細は Issue #4 を参照してください。
+AIにいきなり実装（How）を渡すと、何のためにそれを作るのかという文脈（Why）が失われ、本来の課題とズレた実装が生まれがちです。本書ではDevelopment Contextを3段階に分離し、AIに渡す情報を段階的に具体化します。
+
+```text
+WHY（なぜ変更が必要なのか）→ WHAT（何を満たせば解決したと言えるのか）→ HOW（どう実現するのか）
+```
+
+WhyとWhatを保持したままHowへ具体化すること。これが本章の核心です。
+
+### チケット階層へのMapping
+
+この3段階は、チケット階層にそのままMappingされます。機能開発（Issue起点）と技術対応（Tech Issue起点）の2パターンがあります。
+
+| 段階 | 機能開発（Issue起点） | 技術対応（Tech Issue起点） |
+| --- | --- | --- |
+| WHY（なぜ必要か） | Issue（課題・価値） | Tech Issue |
+| WHAT（何を満たすか） | Story | Task |
+| HOW（どう実現するか） | SubTask | SubTask |
+
+機能開発では「課題（Issue）→ 要求仕様を定義するStory → 具体的な実現手段であるSubTask」という流れを取ります。技術対応では、Requirement Specification（要求仕様）自体は変えずに技術的な変更を行うため、Storyの代わりにTaskを使います。
+
+### StoryとTaskの違い
+
+StoryとTaskは「ユーザー向け / 内部向け」という区別だけでは分類しません。判断基準は、
+
+> **Requirement Specificationを定義・変更する必要があるか**
+
+です。
+
+- **Story**: Requirement Specificationを新たに定義または変更する（WHY → Story → WHAT）
+- **Task**: Requirement Specificationは変更せず、技術・設計・実装等の変更を行う（WHY → Task → WHAT）
+
+どちらも、具体的な実現方法はSubTask（HOW）へ分離します。本書の他の章で `Type: Story` / `Type: Task` / `Type: SubTask` と表記しているのは、この区分に対応しています。
+
+### Bugのチケット分岐
+
+Bugは「仕様と実装のどちらがズレているか」によって、親チケットがStoryになるかTaskになるかが分かれます。
+
+| ケース | WHY | 親チケット（WHAT） | HOW |
+| --- | --- | --- | --- |
+| 仕様自体が誤っている | 期待・要求と異なる挙動になっている | Story（正しい仕様を再定義する） | SubTask |
+| 仕様は正しいが設計・実装が誤っている | 正しい仕様を満たしていない | Task（設計・実装を修正する） | SubTask |
+
+- **仕様自体が誤っている場合**: 「正しい仕様は何か」を再定義する必要があり、これはRequirement Specificationの変更にあたるため、親チケットはStoryになります。
+- **仕様は正しいが設計・実装が誤っている場合**: 仕様自体は変更せず、設計・実装のみを修正するため、親チケットはTaskになります。
+
+いずれのケースも、具体的な修正方法はSubTask（HOW）へ分離します。この分岐も、前節で説明した「Requirement Specificationを変更するか否か」という判断基準にそのまま従います。
 
 ---
 
 ## 6. 段階的な文脈の精緻化 — Progressive Context Refinement
 
-本章は、PLAN.md が定義する原則「Progressive Context Refinement」を本書に明文化するための章です。本文は Issue #4（本リポジトリのTask）で執筆予定です。
+### WhyとWhatを保持したままHowを渡す
 
-> この章は現時点ではスタブです。詳細は Issue #4 を参照してください。
+Why → What → Howのチケット階層は、チケット管理上の都合だけでなく、AIに渡すDevelopment Contextを段階的に具体化するための仕組みでもあります。AIが現在のSubTask（How）だけを見て作業すると、何のためにその変更をするのか（Why）・何を満たせば完了なのか（What）という文脈が失われ、本来の課題からズレた実装が生まれます。
+
+```text
+Business / User Context → Issue（WHY） → Story/Task（WHAT） → SubTask（HOW） → Repository Context → Implementation
+```
+
+AIには現在のSubTaskの内容だけでなく、その上位のWhatとWhyを常にContextとして保持させます。これを **Progressive Context Refinement** と呼び、本書の中核原則の一つとします。
 
 ---
 
 ## 7. 追跡可能性 — Traceability
 
-本章は、PLAN.md が定義する原則「Traceability」を本書に明文化するための章です。本文は Issue #4（本リポジトリのTask）で執筆予定です。
+### なぜこのコードが存在するのかを遡れる状態を保つ
 
-> この章は現時点ではスタブです。詳細は Issue #4 を参照してください。
+AIによる変更について、「なぜこのコードが存在するのか」をIssueまで遡れる状態を維持します。Ticket Management（Issue / Story・Task / SubTask）とGit Workflow（Branch / Commit / PR / CI）を別々の仕組みとして扱わず、一つの **Traceability Chain** として説明します。
+
+```text
+Issue（WHY） → Story/Task（WHAT） → SubTask（HOW） → Branch → Code / Test → Commit → PR/MR → CI → Running Software
+```
+
+このChainのどの地点からでも、上流（なぜそれを作るのか）・下流（どう動いているのか）の両方へ追跡できることが、AI駆動開発における説明責任（Accountability）の基盤になります。
 
 ---
 
