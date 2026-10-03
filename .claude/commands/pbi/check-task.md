@@ -111,13 +111,15 @@ To Do → Refining → Refined → In Progress → Reviewing → Done
 | **Title** | 作業形式（「〇〇を〇〇する」等） | 「本番環境のSSO設定を変更する」 |
 | **背景/目的** | なぜこのTaskが必要か | 【背景】顧客からの依頼（#xxx参照） |
 | **完了条件** | 何をもって完了とするか（列挙形式） | - [ ] SSO設定が有効化されている |
-| **元チケット** | 起点となるRequestまたはIssueへのリンク | 【元Request】#xxx |
+| **Parent（元チケット）** | 起点となるRequestまたはIssue/Requirementへのリンク | Parent: #xxx |
 
 ### Taskテンプレート
 
 ```
+Parent: #xxx
+
 【背景/目的】
-[なぜこのTaskが必要か。元RequestまたはIssueのリンク]
+[なぜこのTaskが必要か]
 
 【作業内容】
 [具体的に何をするか]
@@ -161,7 +163,7 @@ GitHub Issue のラベル（Status / Workflow State / Release Version）の設�
 | 4 | 完了条件の具体性 | 「〜が設定されている」「〜が動作する」等、客観的に判定可能 |
 | 5 | 完了条件の網羅性 | 主要な作業項目が揃っている |
 | 6 | 曖昧表現なし | 「適切に」「正しく」等の主観的表現がない |
-| 7 | 元チケットリンク | 起点となるRequest/Issueの#xxxへの参照がある |
+| 7 | 元チケットリンク | 本文冒頭に `Parent: #xxx`（起点となるRequest/Issue/Requirementの#xxx）がある |
 
 ### Phase 3: 品質チェック
 
@@ -196,7 +198,7 @@ Source: #123
 ✅ Title形式: 作業形式
    > 「本番環境のSSO設定を変更する」
 
-✅ 背景/目的: 存在する（元Request #1100 参照）
+✅ 背景/目的: 存在する（Parent: #1100 参照）
 ✅ 完了条件: 記載あり（3項目）
 
 ---
@@ -216,7 +218,7 @@ Source: #123
 ⚠️ 元チケットリンク: なし
 
    📝 追加推奨:
-   > 【元Request】#1100
+   > Parent: #1100
 
 ---
 
@@ -240,7 +242,7 @@ Source: #123
 
 💡 次のアクション:
 1. 完了条件の「正しく動作すること」を具体的な判定条件に書き換え
-2. 元Requestの#xxxを本文に追記
+2. 本文冒頭に `Parent: #xxx` を追記
 3. 修正後に再度 /pbi:check-task で確認
 ```
 
@@ -267,7 +269,7 @@ Source: #123
 - 対応: 具体的な判定条件（観察可能な結果）に書き換える
 
 ### ⚠️ 元チケットリンクなし
-- 対応: 元Requestの#xxxを本文に追記
+- 対応: 本文冒頭に `Parent: #xxx` を追記
 
 ## 次のアクション
 
@@ -286,7 +288,7 @@ GitHub Issue のコメントに以下が追記されます：
 
 【指摘事項】
 ⚠️ 完了条件に曖昧表現: 「正しく動作すること」を具体的な判定条件に書き換えてください
-⚠️ 元チケットリンクなし: 起点となるRequest/Issueの#xxxを追記してください
+⚠️ 元チケットリンクなし: 本文冒頭に `Parent: #xxx` を追記してください
 
 修正後に再度チェックをお願いします。
 ```
@@ -336,9 +338,11 @@ GitHub Issue のコメントに以下が追記されます：
 【Title】（作業形式で記載）
 例: 〇〇を〇〇する / △△の設定変更対応
 
+【Parent】
+Parent: #xxx（対応するRequest/Issue/Requirementの#xxx）
+
 【背景/目的】
-[なぜこのTaskが必要か。元RequestまたはIssueの#xxxリンク]
-【元Request/Issue】#xxx
+[なぜこのTaskが必要か]
 
 【作業内容】
 [具体的に何をするか]
@@ -386,8 +390,10 @@ GitHub Issue のコメントに以下が追記されます：
 # Title
 本番環境のSSO設定を変更する
 
+Parent: #1100
+
 # 背景/目的
-【元Request】#1100「ABC株式会社様のSSO設定変更依頼」に基づく対応。
+ABC株式会社様のSSO設定変更依頼（#1100）に基づく対応。
 現在の設定では対象ユーザーがシングルサインオンできない状態。
 
 # 作業内容
@@ -424,7 +430,7 @@ SSOが正しく動作すること
 - Title: 主語・動詞が不明確（何の・何を・どうする？）
 - 背景/目的: なし（なぜやるかが不明）
 - 完了条件: 「正しく動作すること」は曖昧。客観的に判定できない
-- 元チケットリンク: なし（トレーサビリティ欠如）
+- Parent: なし（トレーサビリティ欠如）
 
 ---
 
@@ -435,6 +441,6 @@ SSOが正しく動作すること
 - **TaskにはGherkin形式の受け入れ条件は不要**: Story（機能仕様）とは異なり、Taskは「完了条件」の列挙形式を使う
 - **Planned Release Versionは In Progress 移行時点で必須**: 未設定のまま In Progress になっている場合は指摘する
 - **Released Versionは Done 後に設定（Resolution=Implemented/Fixed の場合）**: Done になってリリースが完了したら必ず設定すること
-- **Request→Task直行ルート**: Requestに紐づくTaskにはRequirementは存在しない。元Requestの#xxxをリンクするだけでよい
+- **Request→Task直行ルート**: Requestに紐づくTaskにはRequirementは存在しない。`Parent: #xxx` でRequestの#xxxをリンクするだけでよい
 - Title形式が「ユーザーストーリー形式」の場合、Story化を提案します
 - Title形式が「不具合形式」の場合、Bug Issue化を提案します

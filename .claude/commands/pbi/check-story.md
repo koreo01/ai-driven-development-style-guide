@@ -180,7 +180,7 @@ Layer 1/2 で同一 Story と判断しても、具体例(Examples)をすべて�
 | フィールド | 必須事項 | 例 |
 |-----------|---------|-----|
 | **Title** | 「〇〇は△△できる」形式（ユーザーストーリー形式） | 「ユーザーはWeb画面から予約日時を変更できる」 |
-| **元Requirement** | 派生元Requirementへのリンク | 【元Requirement】#xxx |
+| **Parent（元Requirement）** | 派生元Requirementへのリンク | Parent: #xxx |
 | **受け入れ条件** | **Gherkin形式**で記載 | Given/When/Then |
 
 ### Title形式（ユーザーストーリー形式）
@@ -250,7 +250,7 @@ GitHub Issue のラベル（Status / Workflow State / Release Version / Mock Typ
 | # | チェック項目 | 合格基準 |
 |---|-------------|---------|
 | 1 | Title形式 | 「〇〇は△△できる」形式（ユーザーストーリー形式） |
-| 2 | 元Requirementリンク | Requirementへのリンクまたは参照がある |
+| 2 | 元Requirementリンク | 本文冒頭に `Parent: #xxx`（Requirementへのリンク）がある |
 | 3 | 受け入れ条件の存在 | Gherkin形式の記載がある |
 
 ### Phase 2: Gherkin形式チェック
@@ -307,7 +307,7 @@ Source: #123
 ✅ Title形式: ユーザーストーリー形式
    > 「ユーザーはWeb画面から予約日時を変更できる」
 
-✅ 元Requirementリンク: 存在する（#xxx）
+✅ 元Requirementリンク: 存在する（Parent: #xxx）
 ✅ 受け入れ条件: Gherkin形式で記載あり
 
 ---
@@ -399,7 +399,7 @@ Source: #123
 # フォーマットチェック結果
 
 - **チケット**: STORY-456「ユーザーはWeb画面から予約日時を変更できる」
-- **元Requirement**: #xxx
+- **Parent**: #xxx
 - **チェック日時**: 2026-04-02 16:30
 - **スコア**: 85/100（⚠️ 要改善）
 
@@ -648,9 +648,9 @@ Scenario Outline の Examples テーブル件数を評価する。
 〇〇は△△できる
 例: ユーザーはWeb画面から予約日時を変更できる
 
-【元Requirement】
-派生元のRequirement番号またはリンク:
-例: #xxx「予約変更をWeb完結できるようにしたい」
+【Parent】
+派生元のRequirement番号:
+例: Parent: #xxx（「予約変更をWeb完結できるようにしたい」）
 
 【受け入れ条件】（Gherkin形式 必須）
 
@@ -690,7 +690,7 @@ Scenario Outline: [シナリオ名]
 | Phase | 配点 | 評価観点 |
 |-------|------|---------|
 | プロパティチェック | 20点 | Status・Workflow State・Release Version・Mock Type の設定 |
-| 構造チェック | 25点 | Title形式・元Requirement・受け入れ条件の存在 |
+| 構造チェック | 25点 | Title形式・Parent（元Requirement）・受け入れ条件の存在 |
 | Gherkin形式 | 30点 | Given/When/Then・シナリオ網羅性・Scenario Outline/Examples |
 | 品質チェック | 25点 | 検証可能性・具体性・SubTask分解可能性・検証スコープ・Examplesスプリット判断 |
 
@@ -712,8 +712,7 @@ Scenario Outline: [シナリオ名]
 # Title
 ユーザーはWeb画面から予約日時を変更できる
 
-# 元Requirement
-【元Requirement】#xxx「予約変更をWeb完結できるようにしたい」
+Parent: #xxx（「予約変更をWeb完結できるようにしたい」）
 
 # 受け入れ条件
 
@@ -749,7 +748,7 @@ Examples:
 
 **問題点:**
 - Title: 実装形式（「〜を実装する」）→ ユーザーストーリー形式ではない
-- 元Requirement: リンクなし（トレーサビリティ欠如）
+- Parent: リンクなし（トレーサビリティ欠如）
 - 受け入れ条件: Gherkin形式ではない、曖昧
 
 ### 設計仕様混入の例 ❌（フォーマットはあるが内容がNG）
