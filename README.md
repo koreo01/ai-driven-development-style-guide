@@ -1581,6 +1581,12 @@ Guidesは「そもそも間違えさせない」、Sensorsは「間違えたら�
 
 下位Phaseのコマンドは上位Phaseでも引き続き使えるため、累積的に活用範囲が広がります。採否(Yes/No)の最終ゲートは、どのPhase・どのコマンドでも人間が握ります。
 
+### 11.2 Scrum-skills（`.claude/commands/pbi/`）の位置付け
+
+第6章「Why・What・Howとチケット階層の対応」が定めるIssue→Requirement→Story/Task→SubTaskというチケットモデルを、Claude Code上でどう検査・生成するかを担うのが `.claude/commands/pbi/` 配下のSlash Command群（check-story／template-story等、以下Scrum-skills）です。
+
+Scrum-skillsは各チケットのフォーマットを検査・テンプレート生成する補助ツールであり、本章冒頭で述べた通り本書のSource of Truthではありません。本書のSource of Truthは第6章が定めるWhy→What→Howモデルそのものであり、Scrum-skillsはそのモデルをClaude Code上で具体化する一実装（How）です。他のツールやエージェント基盤を採用する場合、Scrum-skills自体を移植する必要はなく、第6章のモデルを満たす別の検査・生成手段に読み替えれば本書の原則はそのまま適用できます。
+
 ---
 
 ## 12. Project Adaptation（他ツールへの読み替え） — Project Adaptation
