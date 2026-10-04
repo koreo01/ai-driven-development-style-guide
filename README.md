@@ -1054,9 +1054,20 @@ Guidesは「そもそも間違えさせない」、Sensorsは「間違えたら�
 
 ## 11. Project Adaptation（他ツールへの読み替え） — Project Adaptation
 
-本章は、PLAN.md が定義する原則「Project Adaptation」を本書に明文化するための章です。本文は Issue #8（本リポジトリのTask）で執筆予定です。
+本書は第9章「なぜGitHub Flowか」でGitHub Flowをリファレンス実装として採用しています。しかしGitHubという製品そのものを必須化しているわけではありません。重要なのは製品名ではなく、各仕組みがどのPrincipleを実現しているかです。GitLab・Jira等、異なるツールを使うプロジェクトでも、以下の対応表に沿ってConceptを自分たちのツールへマッピングすれば、本書の原則をそのまま適用できます。
 
-> この章は現時点ではスタブです。詳細は Issue #8 を参照してください。
+| Concept | Reference Implementation（GitHub） | Alternative Example |
+| --- | --- | --- |
+| Work Item | GitHub Issue | GitLab Issue / Jira |
+| Repository | GitHub | Intranet GitLab |
+| Version Control | Git | Git |
+| Working Unit | Branch | Branch |
+| Change History | Commit | Commit |
+| Review Unit | Pull Request | GitLab Merge Request |
+| Automated Verification | GitHub Actions | GitLab CI / Jenkins |
+| Integration | Merge | Merge |
+
+GitHub以外のツールを使う場合、本書中の「GitHub Issue」「Pull Request」「GitHub Actions」といった固有名詞は、上表の同じ行にあるConceptへ読み替えてください。例えば第7章「追跡可能性」のTraceability Chain（Issue→Story/Task→SubTask→Branch→Code/Test→Commit→PR/MR→CI→Running Software）や、第10章「Claude Codeリファレンス実装」のCLAUDE.md・Hooksの設定値（`.claude/config/ticket-system.json` 等）は、GitHubというReference Implementationに合わせた具体化です。GitLab等を採用するプロジェクトでは、Concept（Work Item・Review Unit・Automated Verification等）が何を実現しているかを保ったまま、該当するツールのAPI・CLI・Hook機構に合わせて実装を差し替えてください。
 
 ---
 
