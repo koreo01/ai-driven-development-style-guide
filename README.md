@@ -301,7 +301,7 @@ AIには現在のSubTaskの内容だけでなく、その上位のWhatとWhyを�
 
 ### なぜこのコードが存在するのかを遡れる状態を保つ
 
-AIによる変更について、「なぜこのコードが存在するのか」をIssueまで遡れる状態を維持します。Ticket Management（Issue / Story・Task / SubTask）とGit Workflow（Branch / Commit / PR / CI）を別々の仕組みとして扱わず、一つの **Traceability Chain** として説明します。
+AIによる変更について、「なぜこのコードが存在するのか」をIssueまで遡れる状態を維持します。Ticket Management（Issue / Story・Task / SubTask）とGit Workflow（Branch / Commit / PR/MR / CI）を別々の仕組みとして扱わず、一つの **Traceability Chain** として説明します。
 
 ```text
 Issue（WHY） → Story/Task（WHAT） → SubTask（HOW） → Branch → Code / Test → Commit → PR/MR → CI → Running Software
