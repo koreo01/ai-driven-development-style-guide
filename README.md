@@ -1073,9 +1073,58 @@ GitHub以外のツールを使う場合、本書中の「GitHub Issue」「Pull 
 
 ## 12. Security / Governance — Security / Governance
 
-本章は、PLAN.md が定義する原則「Security / Governance」を本書に明文化するための章です。本文は Issue #9（本リポジトリのTask）で執筆予定です。
+企業・プロジェクトによって利用可能なツール（GitHub、Intranet GitLab、Azure DevOps、Jira、Jenkins、MCP、Connector等）は異なります。AI Agentが自身の判断で自由にツールを選択すると、企業・プロジェクトのSecurity Policyから逸脱する可能性があります。本章ではこれを防ぐための行動原則を定めます。
 
-> この章は現時点ではスタブです。詳細は Issue #9 を参照してください。
+### Environment-Governed Tooling
+
+> AIが利用するツールは、企業・プロジェクトが承認・設定した開発環境に従う。
+
+AI Agentは次を守ります。
+
+- 未承認のツールを追加しない
+- Git Remoteを勝手に変更しない
+- 未承認サービスへ自動fallbackしない
+- CredentialをRepositoryへ保存しない
+
+第9章「なぜGitHub Flowか」・第10章「Claude Codeリファレンス実装」で説明するGitHub・Claude Code固有の手順は、この原則をGitHub環境向けに具体化したReference Implementationの一つであり、他のツール環境では第11章「Project Adaptation」の対応表に沿って読み替えます。
+
+### Git Remote / Push Policy
+
+`git push` を一律に「インターネットへの情報送信」として扱うことはしません。
+
+```text
+git push
+    ↓
+Project-configured Remote
+    ↓
+Project-approved Repository
+```
+
+例えばプロジェクトがIntranet GitLabを使用している場合、そのGitLabへの `push` は通常のプロジェクトワークフローです。重要なのは送信先がプロジェクト承認済みのRepositoryであることであり、以下を守ります。
+
+- Project-approved Remoteのみを使用する
+- Remoteを勝手に追加しない
+- Remote URLを勝手に変更しない
+- GitHubを暗黙の送信先にしない
+- CredentialをRepositoryへ保持しない
+
+### Approved Tools / Credential管理
+
+README・コマンド定義等のReference ImplementationにGitHub・`gh` CLIのような具体的なツール名が登場すること自体は問題ではありません。重要なのは、実際の接続先が企業・プロジェクトが承認したツールに限定されることです。
+
+Repository内に以下を固定しません。
+
+- 組織固有のEndpoint
+- Credential
+- Token
+- Private Git Remote
+- Webhook Secret
+
+未承認のツールへ自動fallbackしません。
+
+### OSS / Runtime Tool Policy
+
+本書が例示するGit・Bash・jq・Python・`gh` 等は、Reference Implementationを実行するためのRuntime Toolとして扱います。企業・プロジェクト環境では、その組織の脆弱性管理・Patch Policyに従います。GitHubを利用しない環境では `gh` を必須としません。未承認のインターネット上のソースからツールを自動installしません。
 
 ---
 
